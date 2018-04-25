@@ -11,7 +11,7 @@
 html, body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  color: #FFF; }
+  color: #3e3e3c; }
 
 input, select, textarea, button, a {
   outline: none;
@@ -26,48 +26,14 @@ body {
   position: relative;
   width: 100; }
 
-button {
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #54698d;
-  font-size: 16px; }
-
-h1 {
-  font-size: 50px;
-  line-height: 52px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  -webkit-font-smoothing: antialiased; }
-
-h2 {
-  font-size: 35px;
-  line-height: 45px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  -webkit-font-smoothing: antialiased; }
-
-h3 {
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  -webkit-font-smoothing: antialiased; }
-
-h4 {
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  -webkit-font-smoothing: antialiased; }
-
 a {
-  color: #FFF; }
-  a img {
-    outline-color: none; }
-  a:hover {
-    text-decoration: none; }
+  color: #3e3e3c; }
+
+a img {
+  outline-color: none; }
+
+a:hover {
+  text-decoration: none; }
 
 p {
   font-size: 16px;
@@ -75,36 +41,38 @@ p {
   font-weight: 300; }
 
 .tree {
-  padding-top: 20px;
   position: relative; }
 
 .level {
   margin-left: 14rem;
   position: relative; }
-  .level:before {
-    content: "";
-    width: 2rem;
-    border-top: 2px solid #000;
-    position: absolute;
-    left: -64px;
-    top: 56%; }
+
+.level:before {
+  content: "";
+  width: 2rem;
+  border-top: 2px solid #000;
+  position: absolute;
+  left: -64px;
+  top: 50%; }
 
 .branch {
   position: relative;
   min-height: 6rem; }
-  .branch:before {
-    content: "";
-    height: 100%;
-    border-left: 2px solid #000;
-    position: absolute;
-    left: -2rem; }
-  .branch:after {
-    content: "";
-    width: 2rem;
-    border-top: 2px solid #000;
-    position: absolute;
-    left: -32px;
-    top: 51%; }
+
+.branch:before {
+  content: "";
+  height: 100%;
+  border-left: 2px solid #000;
+  position: absolute;
+  left: -2rem; }
+
+.branch:after {
+  content: "";
+  width: 2rem;
+  border-top: 2px solid #000;
+  position: absolute;
+  left: -32px;
+  top: 50%; }
 
 .branch:first-child:before {
   width: 10px;
@@ -115,6 +83,12 @@ p {
 .branch:first-child:after {
   height: 10px; }
 
+.branch:only-child:before {
+  content: none; }
+
+.branch:only-child:after {
+  height: 10px; }
+
 .branch:last-child:before {
   width: 10px;
   height: 50%; }
@@ -123,7 +97,7 @@ p {
   height: 10px;
   border-top: none;
   border-bottom: 2px solid #000;
-  margin-top: -11px; }
+  margin-top: -8px; }
 
 .node {
   position: absolute;
@@ -138,11 +112,12 @@ p {
   height: 1.5rem;
   z-index: 5;
   padding: 0; }
-  .slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
-    width: .7rem;
-    height: .7rem;
-    left: -5px;
-    top: -5px; }
+
+.slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
+  width: .7rem;
+  height: .7rem;
+  left: -5px;
+  top: -5px; }
 
 .slds-button.circle-button-remove {
   border: 1px solid #D0021B;

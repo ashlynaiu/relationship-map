@@ -1,21 +1,3 @@
-////////////////////
-/////Variables/////
-//////////////////
-$text-color-standard: #FFF
-$background-color: #54698d
-$desktop-padding: 20px
-$frame-desktop: 820px
-$custom-color: #7e8be4
-$utility-color: #ef7ead
-$standard-color: #fe8f60
-$action-color: #00c6b7
-$doctype-color: #16325c
-
-$transition_standard: all linear .3s
-$transition_long: all .5s ease 0s
-$header_width: 660px
-$body_width: 900px
-
 /////////////////
 /////Resets/////
 ///////////////
@@ -32,7 +14,7 @@ $body_width: 900px
 html, body
 	height: 100%
 	font-family: 'Open Sans', sans-serif
-	color: $text-color-standard
+	color: #3e3e3c
 
 input, select, textarea, button, a
 	outline: none
@@ -47,44 +29,8 @@ body
 	position: relative
 	width: 100
 
-button
-	padding: 8px 16px
-	cursor: pointer
-	border-radius: 4px
-	background-color: #fff
-	color: $background-color
-	font-size: 16px
-
-h1
-	font-size: 50px
-	line-height: 52px
-	font-weight: 300
-	margin-bottom: 20px
-	-webkit-font-smoothing: antialiased
-
-h2
-	font-size: 35px
-	line-height: 45px
-	font-weight: 300
-	margin-bottom: 20px
-	-webkit-font-smoothing: antialiased
-
-h3
-	font-size: 22px
-	line-height: 28px
-	font-weight: 400
-	margin-bottom: 20px
-	-webkit-font-smoothing: antialiased
-
-h4
-	font-size: 20px
-	line-height: 26px
-	font-weight: 400
-	margin-bottom: 10px
-	-webkit-font-smoothing: antialiased
-
 a
-	color: $text-color-standard
+	color: #3e3e3c
 	img
 		outline-color: none
 	&:hover
@@ -98,8 +44,8 @@ p
 ///////////////
 /////Tree/////
 /////////////
+
 .tree
-    padding-top: 20px
     position: relative
 
 .level
@@ -111,7 +57,7 @@ p
         border-top: 2px solid #000
         position: absolute
         left: -64px
-        top: 56%
+        top: 50%
 
 .branch
     position: relative
@@ -128,7 +74,7 @@ p
         border-top: 2px solid #000
         position: absolute
         left: -32px
-        top: 51%
+        top: 50%
 
 .branch:first-child
     &:before
@@ -136,6 +82,13 @@ p
         height: 50%
         top: 50%
         margin-top: 2px
+
+    &:after
+        height: 10px
+
+.branch:only-child
+    &:before
+        content: none
 
     &:after
         height: 10px
@@ -149,7 +102,7 @@ p
         height: 10px
         border-top: none
         border-bottom: 2px solid #000
-        margin-top: -11px
+        margin-top: -8px
 
 .node
     position: absolute
