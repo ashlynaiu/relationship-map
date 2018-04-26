@@ -17,7 +17,11 @@ class treeNode extends Component {
 
   hideChildren() {
     let isHide = this.state.isHide;
-    return this.setState({ isHide: !isHide });
+    setTimeout(() => {
+			this.setState(
+				{ isHide: !isHide }
+			);
+		}, 300);
   }
 
   render() {

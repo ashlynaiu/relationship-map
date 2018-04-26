@@ -45,7 +45,9 @@ p {
 
 .level {
   margin-left: 14rem;
-  position: relative; }
+  position: relative;
+  opacity: 1;
+  transition: all .2s ease; }
 
 .level:before {
   content: "";
@@ -107,7 +109,7 @@ p {
 
 .first-node {
   position: absolute;
-  top: 27%; }
+  top: 33%; }
 
 .slds-button.circle-button-remove, .slds-button.circle-button-edit, .slds-button.circle-button-add {
   border-radius: 50%;
@@ -140,4 +142,5 @@ p {
   height: 4rem; }
 
 .hide {
-  display: none; }
+  transition: all .2s ease;
+  opacity: 0; }

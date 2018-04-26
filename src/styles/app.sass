@@ -54,6 +54,8 @@ p
 .level
     margin-left: 14rem
     position: relative
+    opacity: 1
+    transition: all .2s ease
     &:before
         content: ""
         width: 2rem
@@ -87,6 +89,7 @@ p
         margin-top: 2px
 
     &:after
+
         height: 10px
 
 .branch:only-child
@@ -115,7 +118,7 @@ p
 
 .first-node
     position: absolute
-    top: 27%
+    top: 33%
 
 ///////////////
 /////Node/////
@@ -156,4 +159,5 @@ p
     height: 4rem
 
 .hide
-    display: none
+    transition: all .2s ease
+    opacity: 0
