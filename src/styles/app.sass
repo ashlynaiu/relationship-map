@@ -1,3 +1,6 @@
+$line-color: #ABB7C5
+$red: #D0021B
+$brand-blue: #0070D2
 /////////////////
 /////Resets/////
 ///////////////
@@ -54,7 +57,7 @@ p
     &:before
         content: ""
         width: 2rem
-        border-top: 2px solid #000
+        border-top: 2px solid $line-color
         position: absolute
         left: -64px
         top: 50%
@@ -65,13 +68,13 @@ p
     &:before
         content: ""
         height: 100%
-        border-left: 2px solid #000
+        border-left: 2px solid $line-color
         position: absolute
         left: -2rem
     &:after
         content: ""
         width: 2rem
-        border-top: 2px solid #000
+        border-top: 2px solid $line-color
         position: absolute
         left: -32px
         top: 50%
@@ -101,7 +104,7 @@ p
     &:after
         height: 10px
         border-top: none
-        border-bottom: 2px solid #000
+        border-bottom: 2px solid $line-color
         margin-top: -8px
 
 .node
@@ -109,6 +112,10 @@ p
     left: 0
     top: 50%
     margin-top: -28px
+
+.first-node
+    position: absolute
+    top: 27%
 
 ///////////////
 /////Node/////
@@ -130,17 +137,17 @@ p
 
 .slds-button.circle-button-remove
     @extend %round-button
-    border: 1px solid #D0021B
+    border: 1px solid $red
     left: 80px
 
 .slds-button.circle-button-edit
     @extend %round-button
-    border: 1px solid #0070D2
+    border: 1px solid $brand-blue
     left: 105px
 
 .slds-button.circle-button-add
     @extend %round-button
-    border: 1px solid #0070D2
+    border: 1px solid $brand-blue
     left: 135px
 
 

@@ -50,7 +50,7 @@ p {
 .level:before {
   content: "";
   width: 2rem;
-  border-top: 2px solid #000;
+  border-top: 2px solid #ABB7C5;
   position: absolute;
   left: -64px;
   top: 50%; }
@@ -62,14 +62,14 @@ p {
 .branch:before {
   content: "";
   height: 100%;
-  border-left: 2px solid #000;
+  border-left: 2px solid #ABB7C5;
   position: absolute;
   left: -2rem; }
 
 .branch:after {
   content: "";
   width: 2rem;
-  border-top: 2px solid #000;
+  border-top: 2px solid #ABB7C5;
   position: absolute;
   left: -32px;
   top: 50%; }
@@ -96,7 +96,7 @@ p {
 .branch:last-child:after {
   height: 10px;
   border-top: none;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #ABB7C5;
   margin-top: -8px; }
 
 .node {
@@ -104,6 +104,10 @@ p {
   left: 0;
   top: 50%;
   margin-top: -28px; }
+
+.first-node {
+  position: absolute;
+  top: 27%; }
 
 .slds-button.circle-button-remove, .slds-button.circle-button-edit, .slds-button.circle-button-add {
   border-radius: 50%;

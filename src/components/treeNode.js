@@ -11,9 +11,7 @@ class treeNode extends Component {
   }
 
   componentDidMount () {
-    console.log('i made it')
     let height = document.getElementsByClassName('tree')[0].offsetHeight;
-    console.log(height);
     return this.setState({ treeHeight: height });
   }
 
@@ -23,14 +21,13 @@ class treeNode extends Component {
   }
 
   render() {
-
     let heightStyle = {
       height: this.state.treeHeight
     }
 
     return (
       <div className="tree" style={heightStyle}>
-        <div className="node"> 
+        <div className="first-node"> 
           <div className="button-container slds-is-relative">
             <CrudButtons></CrudButtons>
             <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive" onClick={this.hideChildren}>Rachel Adams</button>
@@ -41,7 +38,7 @@ class treeNode extends Component {
             <div className="node">
               <div className="button-container slds-is-relative">
                 <CrudButtons></CrudButtons>
-                <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive" onClick={this.hideChildren}>Nigel Adams</button>
+                <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive">Nigel Adams</button>
               </div>
             </div>
           </div>
