@@ -34,7 +34,7 @@ class tree extends Component {
 
     return (
         <div className="tree" style={heightStyle}>
-            <TreeLevel people={this.state.people}></TreeLevel>
+            <TreeLevel people={this.state.people} className="test"></TreeLevel>
         </div>
     )
   }

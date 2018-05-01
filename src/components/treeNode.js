@@ -23,7 +23,7 @@ class treeNode extends Component {
   render() {
     const { person } = this.props;
     return (
-      <div className="branch">
+      <div className={`${person.start ? '' : 'branch'}`}>
         <div className={`${person.start ? 'first-node' : 'node'}`}>
           <div className="button-container slds-is-relative">
             <CrudButtons></CrudButtons>

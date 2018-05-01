@@ -8,7 +8,7 @@ class treeLevel extends Component {
     render () {
         const { people } = this.props;
         return (
-            <div className="level">
+            <div className={`${people[0].start ? '' : 'level'}`}>
                 {Object
                     .keys(people)
                     .map(key => <TreeNode
