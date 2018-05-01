@@ -1,14 +1,12 @@
 
 import React, { Component } from 'react';
 import TreeNode from './treeNode';
-import CrudButtons from './crudButtons';
-import TreeLevel from './treeLevel';
 class treeLevel extends Component {
     // className={`level ${this.state.isHide ? 'hide' : ''}`}
     render () {
-        const { people } = this.props;
+        const { people, isHide } = this.props;
         return (
-            <div className={`${people[0].start ? '' : 'level'}`}>
+            <div className={`${people[0].start ? '' : 'level'} ${isHide ? 'hide' : ''}`}>
                 {Object
                     .keys(people)
                     .map(key => <TreeNode

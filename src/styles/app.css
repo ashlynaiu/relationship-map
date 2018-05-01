@@ -28,12 +28,10 @@ body {
 
 a {
   color: #3e3e3c; }
-
-a img {
-  outline-color: none; }
-
-a:hover {
-  text-decoration: none; }
+  a img {
+    outline-color: none; }
+  a:hover {
+    text-decoration: none; }
 
 p {
   font-size: 16px;
@@ -48,33 +46,30 @@ p {
   position: relative;
   opacity: 1;
   transition: all .2s ease; }
-
-.level:before {
-  content: "";
-  width: 2rem;
-  border-top: 2px solid #ABB7C5;
-  position: absolute;
-  left: -64px;
-  top: 50%; }
+  .level:before {
+    content: "";
+    width: 2rem;
+    border-top: 2px solid #ABB7C5;
+    position: absolute;
+    left: -64px;
+    top: 50%; }
 
 .branch {
   position: relative;
   min-height: 6rem; }
-
-.branch:before {
-  content: "";
-  height: 100%;
-  border-left: 2px solid #ABB7C5;
-  position: absolute;
-  left: -2rem; }
-
-.branch:after {
-  content: "";
-  width: 2rem;
-  border-top: 2px solid #ABB7C5;
-  position: absolute;
-  left: -32px;
-  top: 50%; }
+  .branch:before {
+    content: "";
+    height: 100%;
+    border-left: 2px solid #ABB7C5;
+    position: absolute;
+    left: -2rem; }
+  .branch:after {
+    content: "";
+    width: 2rem;
+    border-top: 2px solid #ABB7C5;
+    position: absolute;
+    left: -32px;
+    top: 50%; }
 
 .branch:first-child:before {
   width: 10px;
@@ -118,12 +113,11 @@ p {
   height: 1.5rem;
   z-index: 5;
   padding: 0; }
-
-.slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
-  width: .7rem;
-  height: .7rem;
-  left: -5px;
-  top: -5px; }
+  .slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
+    width: .7rem;
+    height: .7rem;
+    left: -5px;
+    top: -5px; }
 
 .slds-button.circle-button-remove {
   border: 1px solid #D0021B;

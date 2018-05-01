@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import CrudButtons from './crudButtons';
 import TreeLevel from './treeLevel';
 import data from '../model';
 class tree extends Component {
   constructor() {
     super();
-    this.hideChildren = this.hideChildren.bind(this);
     this.state = {
-      isHide: false,
       treeHeight: null,
       people: data
     };
@@ -18,15 +15,6 @@ class tree extends Component {
     return this.setState({ treeHeight: height });
   }
 
-  hideChildren() {
-    let isHide = this.state.isHide;
-    setTimeout(() => {
-			this.setState(
-				{ isHide: !isHide }
-			);
-		}, 300);
-  }
-
   render() {
     let heightStyle = {
         height: this.state.treeHeight
@@ -34,7 +22,7 @@ class tree extends Component {
 
     return (
         <div className="tree" style={heightStyle}>
-            <TreeLevel people={this.state.people} className="test"></TreeLevel>
+            <TreeLevel people={this.state.people}></TreeLevel>
         </div>
     )
   }
