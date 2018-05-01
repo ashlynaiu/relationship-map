@@ -104,7 +104,8 @@ p {
 
 .first-node {
   position: absolute;
-  top: 40%; }
+  top: 50%;
+  transform: translateY(-50%); }
 
 .slds-button.circle-button-remove, .slds-button.circle-button-edit, .slds-button.circle-button-add {
   border-radius: 50%;

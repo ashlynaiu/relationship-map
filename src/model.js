@@ -12,7 +12,8 @@ export default [
                     {
                         name: 'Stratus Inc.',
                         role: '',
-                        start: false
+                        start: false,
+                        children: null
                     }
                 ]
             },
@@ -21,6 +22,32 @@ export default [
                 role: 'Daughter',
                 start: false,
                 children: null
+            },
+            {
+                name: 'Billy Adams',
+                role: 'Daughter',
+                start: false,
+                children: [
+                    {
+                        name: 'Stratus Inc.',
+                        role: '',
+                        start: false,
+                        children: [
+                            {
+                                name: 'Stratus Inc.',
+                                role: '',
+                                start: false,
+                                children: null
+                            }
+                        ]
+                    },
+                    {
+                        name: 'Stratus Inc.',
+                        role: '',
+                        start: false,
+                        children: null
+                    }
+                ]
             },
             {
                 name: 'Katrina Adams',
