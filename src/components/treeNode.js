@@ -14,7 +14,7 @@ class treeNode extends Component {
   hideChildren() {
     if(this.props.person.children) {
       let isHide = this.state.isHide;
-      this.setState({ isHide: !isHide })
+      this.setState({ isHide: !isHide });
     }
     return
   }

@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import TreeNode from './treeNode';
 class treeLevel extends Component {
-    // className={`level ${this.state.isHide ? 'hide' : ''}`}
     render () {
         const { people, isHide } = this.props;
         return (
