@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import TreeLevel from './treeLevel';
-import data from '../model';
 class tree extends Component {
   constructor() {
     super();
     this.state = {
       treeHeight: null,
-      people: data
     };
   }
 
@@ -16,13 +14,14 @@ class tree extends Component {
   }
 
   render() {
+    const { people, changeCard } = this.props;
     let heightStyle = {
         height: this.state.treeHeight
     }
 
     return (
         <div className="tree" style={heightStyle}>
-            <TreeLevel people={this.state.people}></TreeLevel>
+            <TreeLevel people={people} changeCard={changeCard}></TreeLevel>
         </div>
     )
   }

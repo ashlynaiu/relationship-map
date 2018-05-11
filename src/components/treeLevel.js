@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import TreeNode from './treeNode';
 class treeLevel extends Component {
     render () {
-        const { people, isHide } = this.props;
+        const { people, changeCard, isHide } = this.props;
+        
         return (
             <div className={`${people[0].start ? '' : 'level'} ${isHide ? 'hide' : ''}`}>
                 {Object
@@ -11,6 +12,7 @@ class treeLevel extends Component {
                     .map(key => <TreeNode
                         key={key}
                         index={key}
+                        changeCard={changeCard}
                         person={people[key]}/>)
                 }
             </div>
