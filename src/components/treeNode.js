@@ -7,8 +7,10 @@ class treeNode extends Component {
     super(props);
     this.hideChildren = this.hideChildren.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
+    this.hoverHandler = this.hoverHandler.bind(this);
     this.state = {
-      isHide: false
+      isHide: false,
+      showButtons: false
     };
   }
 
@@ -25,14 +27,20 @@ class treeNode extends Component {
     this.props.changeCard(newCard);
   }
 
+  hoverHandler() {
+    let showButtons = this.state.showButtons;
+    console.log(showButtons)
+    return this.setState({ showButtons: !showButtons });
+  }
+  
   render() {
     const { person, changeCard } = this.props;
-    console.log(this.props.changeCard)
+
     return (
       <div className={`${person.start ? '' : 'branch'}`}>
         <div className={`${person.start ? 'first-node' : 'node'}`}>
-          <div className="button-container slds-is-relative">
-            <CrudButtons></CrudButtons>
+          <div className="button-container slds-is-relative" onMouseEnter={this.hoverHandler} onMouseLeave={this.hoverHandler}>
+            <CrudButtons showButtons={this.state.showButtons} ></CrudButtons>
             <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive" onClick={() => this.clickHandler(person.cardData)}>{person.name}</button>
           </div>
         </div>

@@ -150,5 +150,8 @@ p {
   transition: all .2s ease;
   opacity: 0; }
 
+.crud-hide {
+  display: none; }
+
 .right-panel {
   width: 30%; }

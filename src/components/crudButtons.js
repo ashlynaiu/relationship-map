@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class crudButtons extends Component {
   render() {
+    const { showButtons } = this.props;
     return (
-        <div>
+        <div className={`${showButtons ? '' : 'crud-hide'}`}>
             <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected circle-button-remove slds-is-absolute" aria-live="assertive">
                 <span className="slds-is-relative">
                     <svg className="slds-is-absolute" width="52" height="52" viewBox="0 0 52 52"><path fill="#D0021B" d="m31.6 25.8l13.1-13.1c0.6-0.6 0.6-1.5 0-2.1l-2.1-2.1c-0.6-0.6-1.5-0.6-2.1 0l-13.1 13.1c-0.4 0.4-1 0.4-1.4 0l-13.1-13.2c-0.6-0.6-1.5-0.6-2.1 0l-2.1 2.1c-0.6 0.6-0.6 1.5 0 2.1l13.1 13.1c0.4 0.4 0.4 1 0 1.4l-13.2 13.2c-0.6 0.6-0.6 1.5 0 2.1l2.1 2.1c0.6 0.6 1.5 0.6 2.1 0l13.2-13.1c0.4-0.4 1-0.4 1.4 0l13.1 13.1c0.6 0.6 1.5 0.6 2.1 0l2.1-2.1c0.6-0.6 0.6-1.5 0-2.1l-13.1-13.1c-0.3-0.4-0.3-1 0-1.4z"></path></svg>
