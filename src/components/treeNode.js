@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CrudButtons from './crudButtons';
 import TreeLevel from './treeLevel';
+import Icon from './Icon';
 
 class treeNode extends Component {
   constructor(props) {
@@ -29,10 +30,9 @@ class treeNode extends Component {
 
   hoverHandler() {
     let showButtons = this.state.showButtons;
-    console.log(showButtons)
     return this.setState({ showButtons: !showButtons });
   }
-  
+
   render() {
     const { person, changeCard } = this.props;
 
@@ -41,7 +41,10 @@ class treeNode extends Component {
         <div className={`${person.start ? 'first-node' : 'node'}`}>
           <div className="button-container slds-is-relative" onMouseEnter={this.hoverHandler} onMouseLeave={this.hoverHandler}>
             <CrudButtons showButtons={this.state.showButtons} ></CrudButtons>
-            <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive" onClick={() => this.clickHandler(person.cardData)}>{person.name}</button>
+            <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive" onClick={() => this.clickHandler(person.cardData)}>
+              <Icon object={person.object}></Icon>
+              {person.name}
+            </button>
           </div>
         </div>
         {person.children && <TreeLevel changeCard={changeCard} people={person.children} isHide={this.state.isHide}/>}

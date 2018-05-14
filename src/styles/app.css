@@ -1,6 +1,6 @@
 #root {
   height: 100%;
-  padding: 80px; }
+  padding: 50px; }
 
 * {
   margin: 0;
@@ -40,12 +40,25 @@ p {
   line-height: 24px;
   font-weight: 300; }
 
-.container {
-  display: flex;
-  justify-content: space-between; }
+@media only screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+    justify-content: space-between; } }
+
+@media only screen and (min-width: 1000px) {
+  .right-panel {
+    width: 30%;
+    padding-left: 20px; } }
+
+@media only screen and (min-width: 680px) and (max-width: 999px) {
+  .right-panel {
+    display: flex;
+    justify-content: space-between; } }
 
 .tree {
-  position: relative; }
+  position: relative;
+  overflow-y: scroll;
+  width: 100%; }
 
 .level {
   margin-left: 14rem;
@@ -146,12 +159,13 @@ p {
   width: 10rem;
   height: 4rem; }
 
+.tree .node-button button {
+  font-size: 15px;
+  padding: 0 .3rem; }
+
 .hide {
   transition: all .2s ease;
   opacity: 0; }
 
 .crud-hide {
   display: none; }
-
-.right-panel {
-  width: 30%; }

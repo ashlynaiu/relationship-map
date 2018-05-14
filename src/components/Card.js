@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Icon from './Icon';
 
-class rightPanel extends Component {
+class Card extends Component {
   render() {
     const { card } = this.props;
     return (
@@ -8,12 +9,7 @@ class rightPanel extends Component {
             <div className="slds-card__header slds-grid">
                 <header className="slds-media slds-media_center slds-has-flexi-truncate">
                 <div className="slds-media__figure">
-                    <span className="slds-icon_container slds-icon-standard-account" title="account">
-                    <svg className="slds-icon slds-icon_small" aria-hidden="true">
-                        
-                    </svg>
-                    <span className="slds-assistive-text">{card.title}</span>
-                    </span>
+                    <Icon object={card.object}></Icon>
                 </div>
                 <div className="slds-media__body">
                     <h2 className="slds-card__header-title">
@@ -30,4 +26,4 @@ class rightPanel extends Component {
   }
 }
 
-export default rightPanel;
+export default Card;

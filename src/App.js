@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Tree from './components/tree';
-import RightPanel from './components/rightPanel';
+import Card from './components/Card';
 import data from './model';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
         <div className="right-panel">
           { Object
             .keys(cards)
-            .map(key => <RightPanel
+            .map(key => <Card
                 key={key}
                 index={key}
                 card={cards[key]}/>)

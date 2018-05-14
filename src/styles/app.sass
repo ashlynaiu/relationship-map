@@ -5,12 +5,82 @@ $line-color: #ABB7C5
 $red: #D0021B
 $brand-blue: #0070D2
 
+///////////////////////
+/////Media Breaks/////
+/////////////////////
+$break-small: 680px
+$break-medium: 1000px
+$break-large: 1260px
+
+// Supported Size Ranges:
+// * handhelds, except-handhelds
+// * small-screens, except-small-screens, to-small-screens, above-small-screens
+// * medium-screens, except-medium-screens, above-medium-screens
+// * large-screens, except-large-screens
+// Use:
+// @include media(handhelds, large-screens)
+
+@mixin media($sizes...)
+
+	@each $size in $sizes
+		@if $size == handhelds
+			@media only screen and (max-width: $break-small - 1)
+				@content
+
+		@else if $size == except-handhelds
+			@media only screen and (min-width: $break-small)
+				@content
+
+		@else if $size == small-screens
+			@media only screen and (min-width: $break-small) and (max-width: $break-medium - 1)
+				@content
+
+		@else if $size == except-small-screens
+			@media only screen and (max-width: $break-small - 1)
+				@content
+			@media only screen and (min-width: $break-medium)
+				@content
+
+		@else if $size == to-small-screens
+			@media only screen and (max-width: $break-medium - 1)
+				@content
+
+		@else if $size == above-small-screens
+			@media only screen and (min-width: $break-medium)
+				@content
+
+		@else if $size == medium-screens
+			@media only screen and (min-width: $break-medium) and (max-width: $break-large - 1)
+				@content
+
+		@else if $size == except-medium-screens
+			@media only screen and (max-width: $break-medium - 1)
+				@content
+			@media only screen and (min-width: $break-large)
+				@content
+
+		@else if $size == to-medium-screens
+			@media only screen and (max-width: $break-large - 1)
+				@content
+
+		@else if $size == above-medium-screens
+			@media only screen and (min-width: $break-large)
+				@content
+
+		@else if $size == large-screens
+			@media only screen and (min-width: $break-large)
+				@content
+
+		@else if $size == except-large-screens
+			@media only screen and (max-width: $break-large - 1)
+				@content
+
 /////////////////
 /////Resets/////
 ///////////////
 #root
     height: 100%
-    padding: 80px
+    padding: 50px
 
 *
 	margin: 0
@@ -48,15 +118,31 @@ p
 	line-height: 24px
 	font-weight: 300
 
+/////////////////
+/////Layout/////
+///////////////
 .container
-    display: flex
-    justify-content: space-between
+    @include media(above-small-screens)
+        display: flex
+        justify-content: space-between
+
+.right-panel
+    @include media(above-small-screens)
+        width: 30%
+        padding-left: 20px
+
+    @include media(small-screens)
+        display: flex
+        justify-content: space-between
 
 ///////////////
 /////Tree/////
 /////////////
 .tree
     position: relative
+    overflow-y: scroll
+    width: 100%
+
 
 .level
     margin-left: 14rem
@@ -163,15 +249,12 @@ p
 .tree .node-button
     width: 10rem
     height: 4rem
-
+    button
+        font-size: 15px
+        padding: 0 .3rem
 .hide
     transition: all .2s ease
     opacity: 0
 
 .crud-hide
     display: none
-//////////////////////
-/////Right Panel/////
-////////////////////
-.right-panel
-    width: 30%
