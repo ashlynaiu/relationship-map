@@ -2,6 +2,7 @@
   "name": "map",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "devDependencies": {
     "node-sass": "^4.8.3",
     "npm-run-all": "^4.1.2"
@@ -10,6 +11,7 @@
     "@salesforce-ux/design-system": "^2.5.2",
     "ajv": "^6.4.0",
     "history": "^4.7.2",
+    "lightning-container": "^1.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
