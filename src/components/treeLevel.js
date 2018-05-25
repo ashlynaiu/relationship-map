@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import TreeNode from './treeNode';
+import TreeBranch from './treeBranch';
 class treeLevel extends Component {
   constructor() {
     super();
@@ -34,7 +34,7 @@ class treeLevel extends Component {
           {renderTitle()}
           {Object
             .keys(people)
-            .map(key => <TreeNode
+            .map(key => <TreeBranch
               key={key}
               index={key}
               changeCard={changeCard}
@@ -46,4 +46,4 @@ class treeLevel extends Component {
   }
 }
 
-export default treeLevel; 
+export default treeLevel;
