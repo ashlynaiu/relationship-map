@@ -5,34 +5,45 @@ import TreeNode from './treeNode';
 import Icon from './Icon';
 
 class treeBranch extends Component {
-    constructor(props) {
-        super();
-        this.hideChildren = this.hideChildren.bind(this);
-        this.clickHandler = this.clickHandler.bind(this);
-        this.state = {
-            height: 'inherit',
-            isHide: false
-        }
+  constructor(props) {
+    super();
+    this.hideChildren = this.hideChildren.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
+    this.calculateHeight = this.calculateHeight.bind(this);
+    this.state = {
+      height: 'inherit',
+      isHide: false
     }
+  }
 
-    componentDidMount() {
-        //LOL Hack the children
-        setTimeout(() => {
-            if (this.props.person.children) {
-                let idNumber = this.props.person.id.toString();
-                let height = document.getElementById(idNumber).offsetHeight;
-                return this.setState({ height: height });
-            }
-            else {
-                return this.setState({ height: 'inherit' });
-            }
-        }, 300);
-    }
+  componentDidMount() {
+    this.calculateHeight();
+  }
+
+  calculateHeight() {
+    let person = this.props.person;
+    setTimeout(() => {
+      if(this.state.isHide) {
+        return this.setState({ height: 'inherit'})
+      }
+      else {
+        if (person.children && !person.start) {
+          let idNumber = person.id.toString();
+          let height = document.getElementById(idNumber).offsetHeight;
+          return this.setState({ height: height });
+        }
+        else {
+            return this.setState({ height: 'inherit' });
+        }
+      }
+    }, 100);
+  }
 
   hideChildren() {
     if(this.props.person.children) {
       let isHide = this.state.isHide;
       this.setState({ isHide: !isHide });
+      this.calculateHeight();
     }
     return
   }
@@ -52,7 +63,7 @@ class treeBranch extends Component {
         <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => this.clickHandler(person.cardData)}>
           <TreeNode person={person} />
         </div>
-        {person.children && <TreeLevel index={person.id} changeCard={changeCard} people={person.children} />}
+        {person.children && <TreeLevel index={person.id} changeCard={changeCard} people={person.children} isHide={this.state.isHide}/>}
       </div>
     )
   }

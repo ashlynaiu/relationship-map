@@ -2,25 +2,8 @@
 import React, { Component } from 'react';
 import TreeBranch from './treeBranch';
 class treeLevel extends Component {
-  constructor() {
-    super();
-    this.getChildHeight = this.getChildHeight.bind(this);
-    this.state = {
-      parentHeight: null
-    }
-  }
-
-  getChildHeight() {
-    if(this.props.person[0].start) {
-      return
-    }
-    else {
-
-    }
-  }
-
   render () {
-    const { people, changeCard, isHide, index } = this.props;
+    const { people, changeCard, index, isHide } = this.props;
 
     let renderTitle = () => {
       if(!people[0].start) {

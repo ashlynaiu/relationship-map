@@ -8,7 +8,7 @@ class tree extends Component {
 
     return (
         <div className="tree">
-            <TreeLevel index={this.firstID} people={people} changeCard={changeCard}></TreeLevel>
+            <TreeLevel index={firstId} people={people} changeCard={changeCard}></TreeLevel>
         </div>
     )
   }
