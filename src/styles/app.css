@@ -55,10 +55,11 @@ p {
     display: flex;
     justify-content: space-between; } }
 
-.parent-level, .child-level {
+.parent-level, .child-level .container {
   border: 1px solid #D8DDE6;
   background: #F4F6F9;
-  padding: 1rem; }
+  padding: 1rem;
+  border-radius: 4px; }
 
 .tree {
   position: relative;
@@ -78,7 +79,8 @@ p {
   top: 0; }
 
 .child-level .container {
-  position: relative; }
+  position: relative;
+  margin-bottom: 20px; }
 
 .child-level .container:before {
   position: absolute;

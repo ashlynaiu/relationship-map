@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import CrudButtons from './crudButtons';
 import TreeLevel from './treeLevel';
 import TreeNode from './treeNode';
-import Icon from './Icon';
 
 class treeBranch extends Component {
   constructor(props) {

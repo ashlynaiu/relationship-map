@@ -144,7 +144,7 @@ p
     border: 1px solid #D8DDE6
     background: #F4F6F9
     padding: 1rem
-
+    border-radius: 4px
 .tree
     position: relative
     overflow-y: scroll
@@ -157,7 +157,6 @@ p
     width: 190px
 
 .child-level
-    @extend %standard-card
     position: absolute
     left: 14rem
     &:before
@@ -166,7 +165,9 @@ p
     top: 0
 
 .child-level .container
+    @extend %standard-card
     position: relative
+    margin-bottom: 20px
     &:before
         position: absolute
         content: ""
