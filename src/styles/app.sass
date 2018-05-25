@@ -4,6 +4,8 @@
 $line-color: #ABB7C5
 $red: #D0021B
 $brand-blue: #0070D2
+$card-border: #E0E5EE
+$card-background: #F4F6F9
 
 ///////////////////////
 /////Media Breaks/////
@@ -145,74 +147,34 @@ p
 
 
 .level
-    margin-left: 14rem
     position: relative
     opacity: 1
     transition: all .2s ease
-    &:before
-        content: ""
-        width: 2rem
-        border-top: 2px solid $line-color
-        position: absolute
-        left: -64px
-        top: 50%
 
 .branch
+    margin-left: 14rem
+    
+.node-container
+    background: #F4F6F9
+    padding: 1rem
+    border: 1px solid #D8DDE6
     position: relative
-    min-height: 6rem
+    width: 195px
     &:before
         content: ""
-        height: 100%
-        border-left: 2px solid $line-color
         position: absolute
-        left: -2rem
-    &:after
-        content: ""
-        width: 2rem
         border-top: 2px solid $line-color
+        top: 2rem
+        left: 2rem
+        width: 5rem
+
+    &:after
+        content: ""
         position: absolute
-        left: -32px
-        top: 50%
-
-.branch:first-child
-    &:before
-        width: 10px
-        height: 50%
-        top: 50%
-        margin-top: 2px
-
-    &:after
-        height: 10px
-
-.branch:only-child
-    &:before
-        content: none
-
-    &:after
-        height: 10px
-
-.branch:last-child
-    &:before
-        width: 10px
-        height: 50%
-
-    &:after
-        height: 10px
-        border-top: none
-        border-bottom: 2px solid $line-color
-        margin-top: -8px
-
-.node
-    position: absolute
-    left: 0
-    top: 50%
-    margin-top: -28px
-
-.first-node
-    position: absolute
-    top: 50%
-    transform: translateY(-50%)
-
+        border-left: 2px solid $line-color
+        top: 1rem
+        left: 2rem
+        height: 100%
 ///////////////
 /////Node/////
 /////////////
@@ -255,6 +217,7 @@ p
 .hide
     transition: all .2s ease
     opacity: 0
+    display: none
 
 .crud-hide
     display: none

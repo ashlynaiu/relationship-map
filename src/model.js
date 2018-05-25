@@ -1,5 +1,6 @@
 export default [
     {
+        id: 1,
         name: 'Rachel Adams',
         role: 'CEO',
         start: true,
@@ -23,6 +24,7 @@ export default [
         ],
         children: [
             {
+                id: 2,
                 name: 'Nigel Adams',
                 role: 'husband',
                 start: false,
@@ -46,6 +48,7 @@ export default [
                 ],
                 children: [
                     {
+                        id: 3,
                         name: 'Stratus Inc.',
                         role: '',
                         start: false,
@@ -72,6 +75,7 @@ export default [
                 ]
             },
             {
+                id: 4,
                 name: 'Claire Adams',
                 role: 'Daughter',
                 start: false,
@@ -96,6 +100,7 @@ export default [
                 children: null
             },
             {
+                id: 5,
                 name: 'Billy Adams',
                 role: 'Son',
                 start: false,
@@ -119,6 +124,7 @@ export default [
                 ],
                 children: [
                     {
+                        id: 6,
                         name: 'Stratus Inc.',
                         role: '',
                         start: false,
@@ -142,6 +148,7 @@ export default [
                         ],
                         children: [
                             {
+                                id: 7,
                                 name: 'Cumulus LLC',
                                 role: '',
                                 start: false,
@@ -164,10 +171,36 @@ export default [
                                     }
                                 ],
                                 children: null
+                            },
+                            {
+                                id: 8,
+                                name: 'Sam Hubburd',
+                                role: '',
+                                start: false,
+                                object: 'Contact',
+                                cardData: [
+                                    {
+                                        title: 'Contact Details',
+                                        object: 'Contact',
+                                        info: 'information for Sam card number one'
+                                    },
+                                    {
+                                        title: 'Open Opportunities',
+                                        object: 'Opportunity',
+                                        info: 'information for Sam card number two'
+                                    },
+                                    {
+                                        title: 'Next Best Actions',
+                                        object: 'Coaching',
+                                        info: 'information for Sam card number three'
+                                    }
+                                ],
+                                children: null
                             }
                         ]
                     },
                     {
+                        id: 9,
                         name: 'Stratus Inc.',
                         role: '',
                         start: false,
@@ -194,14 +227,40 @@ export default [
                 ]
             },
             {
-                name: 'Katrina Adams',
-                role: 'Daughter',
+                id: 10,
+                name: 'Cloud LLC',
+                role: 'Subsidary',
                 start: false,
-                object: 'Contact',
+                object: 'Account',
                 cardData: [
                     {
-                        title: 'Contact Details',
-                        object: 'Contact',
+                        title: 'Account Details',
+                        object: 'Account',
+                        info: 'information for card number one'
+                    },
+                    {
+                        title: 'Open Opportunities',
+                        object: 'Opportunity',
+                        info: 'information for card number two'
+                    },
+                    {
+                        title: 'Next Best Actions',
+                        object: 'Coaching',
+                        info: 'information for card number three'
+                    }
+                ],
+                children: null
+            },
+            {
+                id: 11,
+                name: 'Cloud LLC',
+                role: 'Subsidary',
+                start: false,
+                object: 'Account',
+                cardData: [
+                    {
+                        title: 'Account Details',
+                        object: 'Account',
                         info: 'information for card number one'
                     },
                     {

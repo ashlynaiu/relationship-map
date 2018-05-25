@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CrudButtons from './crudButtons';
-import TreeLevel from './treeLevel';
+// import TreeLevel from './treeLevel';
 import Icon from './Icon';
 
 class treeNode extends Component {
@@ -14,6 +14,12 @@ class treeNode extends Component {
       showButtons: false
     };
   }
+
+  // componentDidMount() {
+  //   if(this.props.person.children) {
+  //     this.props.hasChildren(this.props.person.children);
+  //   }
+  // }
 
   hideChildren() {
     if(this.props.person.children) {
@@ -37,8 +43,7 @@ class treeNode extends Component {
     const { person, changeCard } = this.props;
 
     return (
-      <div className={`${person.start ? '' : 'branch'}`}>
-        <div className={`${person.start ? 'first-node' : 'node'}`}>
+        <div className="node">
           <div className="button-container slds-is-relative" onMouseEnter={this.hoverHandler} onMouseLeave={this.hoverHandler}>
             <CrudButtons showButtons={this.state.showButtons} ></CrudButtons>
             <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive" onClick={() => this.clickHandler(person.cardData)}>
@@ -47,8 +52,6 @@ class treeNode extends Component {
             </button>
           </div>
         </div>
-        {person.children && <TreeLevel changeCard={changeCard} people={person.children} isHide={this.state.isHide}/>}
-      </div>
     )
   }
 }
