@@ -1,71 +1,49 @@
 
 import React, { Component } from 'react';
-import TreeBranch from './treeBranch';
+import TreeNode from './treeNode';
 class treeLevel extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.getChildHeight = this.getChildHeight.bind(this);
     this.state = {
-      accountChildren: [],
-      contactChildren: []
-    };
+      parentHeight: null
+    }
   }
 
-  componentDidMount() {
-    let children = this.props.people;
-    let accounts = [];
-    let contacts = [];
-    for (let i = 0; i < children.length; i++) {
-      if (children[i].object === 'Account') {
-        accounts.push(children[i]);
-      }
-      else if (children[i].object === 'Contact') {
-        contacts.push(children[i]);
-      }
+  getChildHeight() {
+    if(this.props.person[0].start) {
+      return
     }
+    else {
 
-    return this.setState({
-      accountChildren: accounts,
-      contactChildren: contacts
-    })
+    }
   }
 
   render () {
-    const { people, changeCard, isHide } = this.props;
-    let accounts = this.state.accountChildren;
-    let contacts = this.state.contactChildren;
+    const { people, changeCard, isHide, index } = this.props;
 
-    // let multiBranch = () => {
-    //   if (accounts.length > 0 && contacts.length > 0) {
-    //     return true;
-    //   }
-    //   else {
-    //     return false;
-    //   }
-    // }
+    let renderTitle = () => {
+      if(!people[0].start) {
+        return (<h4>{people[0].object}</h4>)
+      }
+    }
 
-    // let renderChildren = (object, people) => {
-    //   return (
-    //     <div className={`${multiBranch() ? 'multi-tree' : ''} tree-${object} object-container`}>
-    //       {Object
-    //         .keys(people)
-    //         .map(key => <TreeNode
-    //           key={key}
-    //           index={key}
-    //           changeCard={changeCard}
-    //           multiBranch={multiBranch()}
-    //           person={people[key]}/>)
-    //       }
-    //     </div>
-    //   )
-    // }
-    console.log('account' + accounts);
     return (
-      <div className={`level ${isHide ? 'hide' : ''}`}>
-        {accounts.length > 0 && <TreeBranch changeCard={changeCard} people={accounts} />}
-        {contacts.length > 0 && <TreeBranch people={contacts} />}
+      <div id={index} className={`${people[0].start ? 'parent-level' : 'child-level'} ${isHide ? 'hide' : ''}`}>
+        <div className="container">
+          {renderTitle()}
+          {Object
+            .keys(people)
+            .map(key => <TreeNode
+              key={key}
+              index={key}
+              changeCard={changeCard}
+              person={people[key]}/>)
+          }
+        </div>
       </div>
     )
   }
 }
 
-export default treeLevel; 
+export default treeLevel; 

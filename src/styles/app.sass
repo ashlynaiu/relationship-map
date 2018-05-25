@@ -140,41 +140,75 @@ p
 ///////////////
 /////Tree/////
 /////////////
+%standard-card
+    border: 1px solid #D8DDE6
+    background: #F4F6F9
+    padding: 1rem
+
 .tree
     position: relative
     overflow-y: scroll
+    height: 600px
     width: 100%
 
-
-.level
+.parent-level
+    @extend %standard-card
     position: relative
-    opacity: 1
-    transition: all .2s ease
+    width: 190px
 
-.branch
-    margin-left: 14rem
-    
-.node-container
-    background: #F4F6F9
-    padding: 1rem
-    border: 1px solid #D8DDE6
-    position: relative
-    width: 195px
+.child-level
+    @extend %standard-card
+    position: absolute
+    left: 14rem
     &:before
-        content: ""
-        position: absolute
-        border-top: 2px solid $line-color
-        top: 2rem
-        left: 2rem
-        width: 5rem
 
-    &:after
-        content: ""
+.child-level:not(:first-child)
+    top: 0
+
+.child-level .container
+    position: relative
+    &:before
         position: absolute
-        border-left: 2px solid $line-color
-        top: 1rem
-        left: 2rem
-        height: 100%
+        content: ""
+        width: 4rem
+        border: 1px solid $line-color
+        left: -5rem
+        top: .5rem
+.branch
+    position: relative
+
+
+// .level
+//     position: relative
+//     opacity: 1
+//     transition: all .2s ease
+
+// .branch
+//     margin-left: 14rem
+
+// .node-container
+//     background: #F4F6F9
+//     padding: 1rem
+//     border: 1px solid #D8DDE6
+//     position: relative
+//     width: 195px
+//     &:before
+//         content: ""
+//         position: absolute
+//         border-top: 2px solid $line-color
+//         top: 2rem
+//         left: 2rem
+//         width: 5rem
+
+//     &:after
+//         content: ""
+//         position: absolute
+//         border-left: 2px solid $line-color
+//         top: 1rem
+//         left: 2rem
+//         height: 100%
+
+
 ///////////////
 /////Node/////
 /////////////
@@ -208,12 +242,15 @@ p
     border: 1px solid $brand-blue
     left: 135px
 
-.tree .node-button
+.node-button
     width: 10rem
     height: 4rem
-    button
-        font-size: 15px
-        padding: 0 .3rem
+    font-size: 11px
+    padding: .3rem
+
+.branch .node
+    margin-top: 12px
+
 .hide
     transition: all .2s ease
     opacity: 0

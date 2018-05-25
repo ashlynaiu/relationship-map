@@ -28,10 +28,12 @@ body {
 
 a {
   color: #3e3e3c; }
-  a img {
-    outline-color: none; }
-  a:hover {
-    text-decoration: none; }
+
+a img {
+  outline-color: none; }
+
+a:hover {
+  text-decoration: none; }
 
 p {
   font-size: 16px;
@@ -53,39 +55,41 @@ p {
     display: flex;
     justify-content: space-between; } }
 
+.parent-level, .child-level {
+  border: 1px solid #D8DDE6;
+  background: #F4F6F9;
+  padding: 1rem; }
+
 .tree {
   position: relative;
   overflow-y: scroll;
+  height: 600px;
   width: 100%; }
 
-.level {
+.parent-level {
   position: relative;
-  opacity: 1;
-  transition: all .2s ease; }
+  width: 190px; }
+
+.child-level {
+  position: absolute;
+  left: 14rem; }
+
+.child-level:not(:first-child) {
+  top: 0; }
+
+.child-level .container {
+  position: relative; }
+
+.child-level .container:before {
+  position: absolute;
+  content: "";
+  width: 4rem;
+  border: 1px solid #ABB7C5;
+  left: -5rem;
+  top: .5rem; }
 
 .branch {
-  margin-left: 14rem; }
-
-.node-container {
-  background: #F4F6F9;
-  padding: 1rem;
-  border: 1px solid #D8DDE6;
-  position: relative;
-  width: 195px; }
-  .node-container:before {
-    content: "";
-    position: absolute;
-    border-top: 2px solid #ABB7C5;
-    top: 2rem;
-    left: 2rem;
-    width: 5rem; }
-  .node-container:after {
-    content: "";
-    position: absolute;
-    border-left: 2px solid #ABB7C5;
-    top: 1rem;
-    left: 2rem;
-    height: 100%; }
+  position: relative; }
 
 .slds-button.circle-button-remove, .slds-button.circle-button-edit, .slds-button.circle-button-add {
   border-radius: 50%;
@@ -94,11 +98,12 @@ p {
   height: 1.5rem;
   z-index: 5;
   padding: 0; }
-  .slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
-    width: .7rem;
-    height: .7rem;
-    left: -5px;
-    top: -5px; }
+
+.slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
+  width: .7rem;
+  height: .7rem;
+  left: -5px;
+  top: -5px; }
 
 .slds-button.circle-button-remove {
   border: 1px solid #D0021B;
@@ -112,12 +117,14 @@ p {
   border: 1px solid #0070D2;
   left: 135px; }
 
-.tree .node-button {
+.node-button {
   width: 10rem;
-  height: 4rem; }
-  .tree .node-button button {
-    font-size: 15px;
-    padding: 0 .3rem; }
+  height: 4rem;
+  font-size: 11px;
+  padding: .3rem; }
+
+.branch .node {
+  margin-top: 12px; }
 
 .hide {
   transition: all .2s ease;
