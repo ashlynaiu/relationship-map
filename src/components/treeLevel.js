@@ -58,9 +58,9 @@ class treeLevel extends Component {
     //     </div>
     //   )
     // }
-
+    console.log('account' + accounts);
     return (
-      <div className={`${people[0].start ? '' : 'level'} ${isHide ? 'hide' : ''}`}>
+      <div className={`level ${isHide ? 'hide' : ''}`}>
         {accounts.length > 0 && <TreeBranch changeCard={changeCard} people={accounts} />}
         {contacts.length > 0 && <TreeBranch people={contacts} />}
       </div>

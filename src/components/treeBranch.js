@@ -10,21 +10,26 @@ class treeBranch extends Component {
       children: null
     };
   }
-
+  componentDidMount() {
+    return this.setState({ children: this.props.people });
+  }
   // hasChildren(children) {
   //   console.log(children)
   //   return this.setState({ children: children})
   // }
   render () {
-    const { people, changeCard, isHide } = this.props;
-
-    let renderNewTree = (children) => {
+    const { changeCard, isHide } = this.props;
+    let people = this.state.children
+    let renderNewTree = (person) => {
+      console.log('render new tree')
+      console.log(person)
       return (
-        <TreeLevel changeCard={changeCard} people={children}/>
+        <TreeLevel index={person.id} changeCard={changeCard} people={person}/>
       )
     }
 
     let renderNode = (person) => {
+      console.log(person)
       return (
         <TreeNode index={person.id} changeCard={changeCard} person={person} />
       )
@@ -33,19 +38,20 @@ class treeBranch extends Component {
     let renderBranch = () => {
       for (let i = 0; i < people.length; i++) {
         if(people[i].children) {
-          console.log('here')
+          console.log('multi')
           return (
             <div>
               {renderNode(people[i])}
-              {renderNewTree(people[i].children)}
+              {renderNewTree(people[i])}
             </div>
           )
         }
         else {
-          console.log(people[i].children)
-          console.log(people[i]);
+          console.log('no children')
           return (
-            <TreeNode index={people[i].id} changeCard={changeCard} person={people[i]} />
+            <div>
+              {renderNode(people[i])}
+            </div>
           )
         }
       }

@@ -4,7 +4,6 @@ class tree extends Component {
 
   render() {
     const { people, changeCard } = this.props;
-
     return (
         <div className="tree">
             <TreeLevel people={people} changeCard={changeCard}></TreeLevel>
