@@ -23,7 +23,7 @@ class treeContainer extends Component {
     let expandedIcon = 'chevrondown';
     let collapsedIcon = 'chevronright';
     let lastChild = people.length;
-  
+
     let renderIcon = () => {
       return this.state.hideBranches ? collapsedIcon : expandedIcon;
     }
@@ -38,7 +38,7 @@ class treeContainer extends Component {
     }
 
     return (
-      <div className="child-container">
+      <div className={`child-container ${objectType}`}>
           {!people[0].start && renderTitle()}
           <div className={`${this.state.hideBranches ? 'hide' : ''}`}>
             {Object

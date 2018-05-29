@@ -73,10 +73,18 @@ p {
 
 .child-level {
   position: absolute;
-  left: 14rem; }
+  left: 15rem; }
 
 .child-level:not(:first-child) {
-  top: -1rem; }
+  top: 0; }
+
+.child-level:not(:first-child):before {
+  position: absolute;
+  content: "";
+  width: 2.4rem;
+  border-top: 2px solid #ABB7C5;
+  left: -4.5rem;
+  top: 2rem; }
 
 .child-level .child-container {
   position: relative;
@@ -85,24 +93,55 @@ p {
 .child-level .child-container:before {
   position: absolute;
   content: "";
-  width: 4rem;
-  border: 1px solid #ABB7C5;
-  left: -5rem;
-  top: .5rem; }
+  width: 2.2rem;
+  border-top: 2px solid #ABB7C5;
+  left: -2.2rem;
+  top: 1.91rem; }
 
 .child-level .child-container .container-header {
   display: flex;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  position: relative; }
 
 .child-level .child-container .container-header h4 {
   font-size: 16px;
   margin-left: 8px; }
 
+.child-level .child-container .container-header:after {
+  position: absolute;
+  content: "";
+  height: 208%;
+  border-left: 2px solid #ABB7C5;
+  left: -3.2rem;
+  top: 1rem; }
+
 .branch {
   position: relative; }
 
+.branch:before {
+  position: absolute;
+  content: "";
+  width: 3.2rem;
+  border-top: 2px solid #ABB7C5;
+  left: -3.2rem;
+  top: 1.9rem; }
+
+.branch:after {
+  position: absolute;
+  content: "";
+  height: 115%;
+  border-left: 2px solid #ABB7C5;
+  left: -3.2rem;
+  top: 2rem; }
+
 .branch .node {
   margin-top: 12px; }
+
+.child-level .child-container:first-of-type .branch:last-child:after {
+  height: 160%; }
+
+.lastChild:after {
+  content: none; }
 
 .node-button {
   display: flex;

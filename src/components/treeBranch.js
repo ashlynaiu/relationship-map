@@ -56,9 +56,17 @@ class treeBranch extends Component {
     let heightStyle = {
         height: this.state.height
     }
+    // /person.object === 'Contacts'
+    let renderLastChildStyle = () => {
+      if(person.object === 'Contact' && this.props.index >= (this.props.lastChild - 1)) {
+        console.log('made it')
+        return 'lastChild'
+      }
+      return ''
+    }
 
     return (
-      <div className="branch" style={heightStyle}>
+      <div className={`branch ${renderLastChildStyle()}`} style={heightStyle}>
         <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => this.clickHandler(person.cardData)}>
           <TreeNode person={person} />
         </div>

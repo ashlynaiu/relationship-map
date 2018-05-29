@@ -162,11 +162,18 @@ p
 
 .child-level
     position: absolute
-    left: 14rem
+    left: 15rem
     &:before
 
 .child-level:not(:first-child)
-    top: -1rem
+    top: 0
+    &:before
+        position: absolute
+        content: ""
+        width: 2.4rem
+        border-top: 2px solid $line-color
+        left: -4.5rem
+        top: 2rem
 
 .child-level .child-container
     @extend %standard-card
@@ -175,25 +182,63 @@ p
     &:before
         position: absolute
         content: ""
-        width: 4rem
-        border: 1px solid $line-color
-        left: -5rem
-        top: .5rem
-
+        width: 2.2rem
+        border-top: 2px solid $line-color
+        left: -2.2rem
+        top: 1.91rem
     .container-header
         display: flex
         text-transform: capitalize
+        position: relative
         h4
             font-size: 16px
             margin-left: 8px
+
+//Allow header to extend to lower node
+.child-level .child-container .container-header:after
+    position: absolute
+    content: ""
+    height: 208%
+    border-left: 2px solid $line-color
+    left: -3.2rem
+    top: 1rem
 /////////////////
 /////Branch/////
 ///////////////
 .branch
     position: relative
+    &:before
+        position: absolute
+        content: ""
+        width: 3.2rem
+        border-top: 2px solid $line-color
+        left: -3.2rem
+        top: 1.9rem
+    &:after
+        position: absolute
+        content: ""
+        height: 115%
+        border-left: 2px solid $line-color
+        left: -3.2rem
+        top: 2rem
     .node
         margin-top: 12px
 
+//Allow the first branch to expand to header
+// .child-container .branch:first-child
+//     &:after
+//         top: -1.2rem
+//         height: 195%
+
+//Allow the last child on the first container with multi-nodes
+//to reach the second container
+.child-level .child-container:first-of-type .branch:last-child
+    &:after
+        height: 160%
+
+.lastChild
+    &:after
+        content: none
 ///////////////
 /////Node/////
 /////////////

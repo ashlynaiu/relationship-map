@@ -9,7 +9,7 @@ class Card extends Component {
         <div className="slds-card__header slds-grid">
           <header className="slds-media slds-media_center slds-has-flexi-truncate">
             <div className="slds-media__figure">
-              <Icon object={card.object}></Icon>
+              <Icon object={card.object} type='standard'></Icon>
             </div>
             <div className="slds-media__body">
               <h2 className="slds-card__header-title">
