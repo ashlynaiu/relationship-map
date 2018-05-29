@@ -1,6 +1,9 @@
 
+//Component contains the logic on how many object
+//branches to make.
 import React, { Component } from 'react';
-import TreeBranch from './treeBranch';
+import TreeContainer from './treeContainer';
+
 class treeLevel extends Component {
   constructor(props) {
     super(props);
@@ -34,32 +37,11 @@ class treeLevel extends Component {
     let accounts = this.state.accountChildren;
     let contacts = this.state.contactChildren;
 
-    let renderTitle = () => {
-      if(!people[0].start) {
-        return (<h4>{people[0].object}</h4>)
-      }
-    }
-
-    let renderChildren = (object, people) => {
-      return (
-        <div className="container">
-          {renderTitle()}
-          {Object
-            .keys(people)
-            .map(key => <TreeBranch
-              key={key}
-              index={key}
-              changeCard={changeCard}
-              person={people[key]}/>)
-          }
-        </div>
-      )
-    }
-
+    //To Do: Validate the index is not duplicating
     return (
       <div id={index} className={`${people[0].start ? 'parent-level' : 'child-level'} ${isHide ? 'hide' : ''}`}>
-          {accounts.length > 0 && renderChildren('account', accounts)}
-          {contacts.length > 0 && renderChildren('contact', contacts)}
+          {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} objectType='accounts'/>}
+          {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} objectType='contacts'/>}
       </div>
     )
   }

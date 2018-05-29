@@ -55,34 +55,34 @@ p {
     display: flex;
     justify-content: space-between; } }
 
-.parent-level, .child-level .container {
-  border: 1px solid #D8DDE6;
-  background: #F4F6F9;
-  padding: 1rem;
-  border-radius: 4px; }
-
 .tree {
   position: relative;
   overflow-y: scroll;
   height: 600px;
   width: 100%; }
 
+.parent-level, .child-level .child-container {
+  border: 1px solid #D8DDE6;
+  background: #F4F6F9;
+  padding: 1rem;
+  border-radius: 4px;
+  width: 195px; }
+
 .parent-level {
-  position: relative;
-  width: 190px; }
+  position: relative; }
 
 .child-level {
   position: absolute;
   left: 14rem; }
 
 .child-level:not(:first-child) {
-  top: 0; }
+  top: -1rem; }
 
-.child-level .container {
+.child-level .child-container {
   position: relative;
   margin-bottom: 20px; }
 
-.child-level .container:before {
+.child-level .child-container:before {
   position: absolute;
   content: "";
   width: 4rem;
@@ -90,10 +90,50 @@ p {
   left: -5rem;
   top: .5rem; }
 
+.child-level .child-container .container-header {
+  display: flex;
+  text-transform: capitalize; }
+
+.child-level .child-container .container-header h4 {
+  font-size: 16px;
+  margin-left: 8px; }
+
 .branch {
   position: relative; }
 
-.slds-button.circle-button-remove, .slds-button.circle-button-edit, .slds-button.circle-button-add {
+.branch .node {
+  margin-top: 12px; }
+
+.node-button {
+  display: flex;
+  width: 10rem;
+  position: relative;
+  height: 4rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: #E0E5EE 1px solid;
+  border-radius: 4px; }
+
+.node-button .slds-icon_container {
+  height: 18px;
+  width: 18px;
+  vertical-align: middle; }
+
+.node-button svg {
+  vertical-align: top; }
+
+.node-button .node-name {
+  font-size: 14px; }
+
+.node-button .node-role {
+  font-size: 12px;
+  color: #ABB7C5;
+  display: block; }
+
+.slds-button_neutral {
+  text-align: left; }
+
+.slds-button.circle-button-edit, .slds-button.circle-button-add, .slds-button.circle-button-extender {
   border-radius: 50%;
   top: -17px;
   width: 1.5rem;
@@ -101,15 +141,11 @@ p {
   z-index: 5;
   padding: 0; }
 
-.slds-button.circle-button-remove svg, .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg {
+.slds-button.circle-button-edit svg, .slds-button.circle-button-add svg, .slds-button.circle-button-extender svg {
   width: .7rem;
   height: .7rem;
   left: -5px;
   top: -5px; }
-
-.slds-button.circle-button-remove {
-  border: 1px solid #D0021B;
-  left: 80px; }
 
 .slds-button.circle-button-edit {
   border: 1px solid #0070D2;
@@ -119,14 +155,11 @@ p {
   border: 1px solid #0070D2;
   left: 135px; }
 
-.node-button {
-  width: 10rem;
-  height: 4rem;
-  font-size: 11px;
-  padding: .3rem; }
-
-.branch .node {
-  margin-top: 12px; }
+.slds-button.circle-button-extender {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -10px;
+  line-height: 1; }
 
 .hide {
   transition: all .2s ease;

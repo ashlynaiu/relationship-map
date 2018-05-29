@@ -18,12 +18,22 @@ class treeNode extends Component {
 
   render() {
     const { person } = this.props;
+    let renderExtension = () => {
+      return(
+        <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected circle-button-extender slds-is-absolute" aria-live="assertive">{person.children.length}</button>
+      )
+    }
+
     return (
         <div className="button-container slds-is-relative" onMouseEnter={this.hoverHandler} onMouseLeave={this.hoverHandler}>
             <CrudButtons showButtons={this.state.showButtons}></CrudButtons>
-            <div className="slds-button slds-button_stateful slds-button_neutral slds-not-selected slds-is-relative node-button" aria-live="assertive">
-                <Icon object={person.object}></Icon>
-                {person.name}
+            {person.children !== null && renderExtension()}
+            <div className="node-button" aria-live="assertive">
+                <Icon object={person.object} type='standard'></Icon>
+                <div>
+                  <span className="node-name">{person.name}</span>
+                  <span className="node-role">{person.role}</span>
+                </div>
             </div>
         </div>
     )

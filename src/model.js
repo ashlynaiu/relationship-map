@@ -126,7 +126,7 @@ export default [
                     {
                         id: 6,
                         name: 'Stratus Inc.',
-                        role: '',
+                        role: 'Foundation',
                         start: false,
                         object: 'Account',
                         cardData: [
@@ -150,7 +150,7 @@ export default [
                             {
                                 id: 7,
                                 name: 'Cumulus LLC',
-                                role: '',
+                                role: 'Services',
                                 start: false,
                                 object: 'Account',
                                 cardData: [
@@ -175,7 +175,7 @@ export default [
                             {
                                 id: 8,
                                 name: 'Sam Hubburd',
-                                role: '',
+                                role: 'Attorney',
                                 start: false,
                                 object: 'Contact',
                                 cardData: [

@@ -21,7 +21,7 @@ class treeBranch extends Component {
   calculateHeight() {
     let person = this.props.person;
     setTimeout(() => {
-      if(this.state.isHide) {
+      if(this.state.isHide || this.props.index >= (this.props.lastChild - 1)) {
         return this.setState({ height: 'inherit'})
       }
       else {
@@ -52,10 +52,11 @@ class treeBranch extends Component {
   }
 
   render() {
-    const { person, changeCard } = this.props;
+    const { person, lastChild, changeCard } = this.props;
     let heightStyle = {
         height: this.state.height
     }
+
     return (
       <div className="branch" style={heightStyle}>
         <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => this.clickHandler(person.cardData)}>

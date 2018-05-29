@@ -140,21 +140,25 @@ p
 ///////////////
 /////Tree/////
 /////////////
-%standard-card
-    border: 1px solid #D8DDE6
-    background: #F4F6F9
-    padding: 1rem
-    border-radius: 4px
 .tree
     position: relative
     overflow-y: scroll
     height: 600px
     width: 100%
 
+/////////////////
+/////Levels/////
+///////////////
+%standard-card
+    border: 1px solid #D8DDE6
+    background: #F4F6F9
+    padding: 1rem
+    border-radius: 4px
+    width: 195px
+
 .parent-level
     @extend %standard-card
     position: relative
-    width: 190px
 
 .child-level
     position: absolute
@@ -162,9 +166,9 @@ p
     &:before
 
 .child-level:not(:first-child)
-    top: 0
+    top: -1rem
 
-.child-level .container
+.child-level .child-container
     @extend %standard-card
     position: relative
     margin-bottom: 20px
@@ -175,45 +179,54 @@ p
         border: 1px solid $line-color
         left: -5rem
         top: .5rem
+
+    .container-header
+        display: flex
+        text-transform: capitalize
+        h4
+            font-size: 16px
+            margin-left: 8px
+/////////////////
+/////Branch/////
+///////////////
 .branch
     position: relative
-
-
-// .level
-//     position: relative
-//     opacity: 1
-//     transition: all .2s ease
-
-// .branch
-//     margin-left: 14rem
-
-// .node-container
-//     background: #F4F6F9
-//     padding: 1rem
-//     border: 1px solid #D8DDE6
-//     position: relative
-//     width: 195px
-//     &:before
-//         content: ""
-//         position: absolute
-//         border-top: 2px solid $line-color
-//         top: 2rem
-//         left: 2rem
-//         width: 5rem
-
-//     &:after
-//         content: ""
-//         position: absolute
-//         border-left: 2px solid $line-color
-//         top: 1rem
-//         left: 2rem
-//         height: 100%
-
+    .node
+        margin-top: 12px
 
 ///////////////
 /////Node/////
 /////////////
+.node-button
+    display: flex
+    width: 10rem
+    position: relative
+    height: 4rem
+    padding: 1rem
+    background: #ffffff
+    border: $card-border 1px solid
+    border-radius: 4px
 
+    .slds-icon_container
+        height: 18px
+        width: 18px
+        vertical-align: middle
+    svg
+        vertical-align: top
+
+    .node-name
+        font-size: 14px
+
+    .node-role
+        font-size: 12px
+        color: $line-color
+        display: block
+.slds-button_neutral
+    text-align: left
+
+///////////////////////
+/////Edit Buttons/////
+/////////////////////
 %round-button
     border-radius: 50%
     top: -17px
@@ -228,11 +241,6 @@ p
         left: -5px
         top: -5px
 
-.slds-button.circle-button-remove
-    @extend %round-button
-    border: 1px solid $red
-    left: 80px
-
 .slds-button.circle-button-edit
     @extend %round-button
     border: 1px solid $brand-blue
@@ -243,15 +251,15 @@ p
     border: 1px solid $brand-blue
     left: 135px
 
-.node-button
-    width: 10rem
-    height: 4rem
-    font-size: 11px
-    padding: .3rem
-
-.branch .node
-    margin-top: 12px
-
+.slds-button.circle-button-extender
+    @extend %round-button
+    top: 50%
+    transform: translateY(-50%)
+    right: -10px
+    line-height: 1
+/////////////////
+/////States/////
+///////////////
 .hide
     transition: all .2s ease
     opacity: 0
