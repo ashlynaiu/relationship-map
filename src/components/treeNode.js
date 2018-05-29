@@ -29,7 +29,7 @@ class treeNode extends Component {
             <CrudButtons showButtons={this.state.showButtons}></CrudButtons>
             {person.children !== null && renderExtension()}
             <div className="node-button" aria-live="assertive">
-                <Icon object={person.object} type='standard'></Icon>
+                <Icon object={person.object} type='standard' size="x-small"></Icon>
                 <div>
                   <span className="node-name">{person.name}</span>
                   <span className="node-role">{person.role}</span>

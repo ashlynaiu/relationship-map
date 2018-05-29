@@ -31,7 +31,7 @@ class treeContainer extends Component {
     let renderTitle = () => {
       return (
         <div className="container-header" onClick={() => this.collapseCard()}>
-          <Icon object={`${renderIcon()}`} type="utility"/>
+          <Icon object={`${renderIcon()}`} type="utility" size="xx-small"/>
           <h4>{objectType} ({people.length})</h4>
         </div>
       );

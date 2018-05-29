@@ -4,12 +4,13 @@ import UtilityIcons from '@salesforce-ux/design-system/assets/icons/utility-spri
 
 class Icon extends Component {
   render() {
+    const { type, size } = this.props;
     let object = this.props.object.toLowerCase();
-    let type = this.props.type;
+
     let renderStandard = () => {
         return (
             <span className={`slds-icon_container slds-m-right_x-small slds-icon-standard-${object}`} title="">
-                <svg className="slds-icon slds-icon_x-small" aria-hidden="true">
+                <svg className={`slds-icon slds-icon_${size}`} aria-hidden="true">
                     <use xlinkHref={`${StandardIcons}#${object}`}></use>
                 </svg>
             </span>
@@ -19,7 +20,7 @@ class Icon extends Component {
     let renderUtility = () => {
         return (
             <span className={`slds-icon_container slds-icon-utility-${object}`} title="">
-                <svg className="slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                <svg className={`slds-icon slds-icon-text-default slds-icon_${size}`} aria-hidden="true">
                     <use xlinkHref={`${UtilityIcons}#${object}`}></use>
                 </svg>
             </span>
