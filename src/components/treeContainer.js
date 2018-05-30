@@ -19,7 +19,7 @@ class treeContainer extends Component {
   }
 
   render () {
-    const { people, changeCard, objectType} = this.props;
+    const { people, changeCard, objectType, multiBranch} = this.props;
     let expandedIcon = 'chevrondown';
     let collapsedIcon = 'chevronright';
     let lastChild = people.length;
@@ -30,7 +30,7 @@ class treeContainer extends Component {
 
     let renderTitle = () => {
       return (
-        <div className="container-header" onClick={() => this.collapseCard()}>
+        <div className={`container-header ${this.state.hideBranches && !multiBranch ? 'collapse-header' : ''}`} onClick={() => this.collapseCard()}>
           <Icon object={`${renderIcon()}`} type="utility" size="xx-small"/>
           <h4>{objectType} ({people.length})</h4>
         </div>
@@ -48,6 +48,7 @@ class treeContainer extends Component {
                 index={key}
                 changeCard={changeCard}
                 lastChild={lastChild}
+                multiBranch={multiBranch}
                 person={people[key]}/>)
             }
           </div>

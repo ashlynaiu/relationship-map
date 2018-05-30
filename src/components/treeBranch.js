@@ -43,20 +43,30 @@ class treeBranch extends Component {
   }
 
   render() {
-    const { person, lastChild, changeCard } = this.props;
+    const { person, lastChild, changeCard, multiBranch} = this.props;
     let heightStyle = {
         height: this.state.height
     }
-    // To do: fix the last child style render!!
-    let renderLastChildStyle = () => {
-      if(person.object === 'Contact' && this.props.index >= (this.props.lastChild - 1)) {
-        return 'lastChild'
+
+    //The ultimate class hack. Please fix me.
+    let renderBranchClasses = () => {
+      let branchHidden = this.state.isHide ? 'branch-hidden' : '';
+      let lastLevelNode = () => {
+        if (multiBranch && this.props.index >= (this.props.lastChild - 1) && person.object === 'Contact') {
+          return 'last-node';
+        }
+        else if (!multiBranch && this.props.index >= (this.props.lastChild - 1)) {
+          return 'last-node';
+        }
+        else {
+          return '';
+        }
       }
-      return ''
+      return (branchHidden.concat(lastLevelNode()));
     }
 
     return (
-      <div className={`branch ${renderLastChildStyle()}`} style={heightStyle}>
+      <div className={`branch ${renderBranchClasses()}`} style={heightStyle}>
         <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => changeCard(person.cardData)}>
           <TreeNode person={person} hideChildren={this.hideChildren}/>
         </div>

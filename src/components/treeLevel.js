@@ -36,12 +36,13 @@ class treeLevel extends Component {
     const { people, changeCard, index, isHide } = this.props;
     let accounts = this.state.accountChildren;
     let contacts = this.state.contactChildren;
+    let multiBranch = accounts.length > 0 && contacts.length > 0 ? true : false;
 
     //To Do: Validate the index is not duplicating
     return (
       <div id={index} className={`${people[0].start ? 'parent-level' : 'child-level'} ${isHide ? 'hide' : ''}`}>
-        {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} objectType='accounts'/>}
-        {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} objectType='contacts'/>}
+        {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} objectType='accounts' multiBranch={multiBranch}/>}
+        {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} objectType='contacts' multiBranch={multiBranch}/>}
       </div>
     )
   }

@@ -64,7 +64,7 @@ p {
 .parent-level, .child-level .child-container {
   border: 1px solid #D8DDE6;
   background: #F4F6F9;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   border-radius: 4px;
   width: 195px; }
 
@@ -101,22 +101,27 @@ p {
 .child-level .child-container .container-header {
   display: flex;
   text-transform: capitalize;
-  position: relative; }
+  position: relative;
+  padding-bottom: 12px; }
 
 .child-level .child-container .container-header h4 {
   font-size: 16px;
   margin-left: 8px; }
 
+.child-level .child-container .container-header.collapse-header:after {
+  content: none; }
+
 .child-level .child-container .container-header:after {
   position: absolute;
   content: "";
-  height: 208%;
+  height: 144%;
   border-left: 2px solid #ABB7C5;
   left: -3.2rem;
   top: 1rem; }
 
 .branch {
-  position: relative; }
+  position: relative;
+  padding-bottom: 12px; }
 
 .branch:before {
   position: absolute;
@@ -129,13 +134,13 @@ p {
 .branch:after {
   position: absolute;
   content: "";
-  height: 115%;
+  height: 100%;
   border-left: 2px solid #ABB7C5;
   left: -3.2rem;
   top: 2rem; }
 
-.branch .node {
-  margin-top: 12px; }
+.last-node:after {
+  content: none; }
 
 .child-level .child-container:first-of-type .branch:last-child:after {
   height: 160%; }
