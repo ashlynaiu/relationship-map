@@ -17,10 +17,10 @@ class treeNode extends Component {
   }
 
   render() {
-    const { person } = this.props;
+    const { person, hideChildren } = this.props;
     let renderExtension = () => {
       return(
-        <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected circle-button-extender slds-is-absolute" aria-live="assertive">{person.children.length}</button>
+        <button className="slds-button slds-button_stateful slds-button_neutral slds-not-selected circle-button-extender slds-is-absolute" aria-live="assertive" onClick={() => hideChildren()}>{person.children.length}</button>
       )
     }
 

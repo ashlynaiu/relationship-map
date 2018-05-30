@@ -28,10 +28,12 @@ body {
 
 a {
   color: #3e3e3c; }
-  a img {
-    outline-color: none; }
-  a:hover {
-    text-decoration: none; }
+
+a img {
+  outline-color: none; }
+
+a:hover {
+  text-decoration: none; }
 
 p {
   font-size: 16px;
@@ -75,31 +77,35 @@ p {
 
 .child-level:not(:first-child) {
   top: 0; }
-  .child-level:not(:first-child):before {
-    position: absolute;
-    content: "";
-    width: 2.4rem;
-    border-top: 2px solid #ABB7C5;
-    left: -4.5rem;
-    top: 2rem; }
+
+.child-level:not(:first-child):before {
+  position: absolute;
+  content: "";
+  width: 2.4rem;
+  border-top: 2px solid #ABB7C5;
+  left: -4.5rem;
+  top: 2rem; }
 
 .child-level .child-container {
   position: relative;
   margin-bottom: 20px; }
-  .child-level .child-container:before {
-    position: absolute;
-    content: "";
-    width: 2.2rem;
-    border-top: 2px solid #ABB7C5;
-    left: -2.2rem;
-    top: 1.91rem; }
-  .child-level .child-container .container-header {
-    display: flex;
-    text-transform: capitalize;
-    position: relative; }
-    .child-level .child-container .container-header h4 {
-      font-size: 16px;
-      margin-left: 8px; }
+
+.child-level .child-container:before {
+  position: absolute;
+  content: "";
+  width: 2.2rem;
+  border-top: 2px solid #ABB7C5;
+  left: -2.2rem;
+  top: 1.91rem; }
+
+.child-level .child-container .container-header {
+  display: flex;
+  text-transform: capitalize;
+  position: relative; }
+
+.child-level .child-container .container-header h4 {
+  font-size: 16px;
+  margin-left: 8px; }
 
 .child-level .child-container .container-header:after {
   position: absolute;
@@ -111,22 +117,25 @@ p {
 
 .branch {
   position: relative; }
-  .branch:before {
-    position: absolute;
-    content: "";
-    width: 3.2rem;
-    border-top: 2px solid #ABB7C5;
-    left: -3.2rem;
-    top: 1.9rem; }
-  .branch:after {
-    position: absolute;
-    content: "";
-    height: 115%;
-    border-left: 2px solid #ABB7C5;
-    left: -3.2rem;
-    top: 2rem; }
-  .branch .node {
-    margin-top: 12px; }
+
+.branch:before {
+  position: absolute;
+  content: "";
+  width: 3.2rem;
+  border-top: 2px solid #ABB7C5;
+  left: -3.2rem;
+  top: 1.9rem; }
+
+.branch:after {
+  position: absolute;
+  content: "";
+  height: 115%;
+  border-left: 2px solid #ABB7C5;
+  left: -3.2rem;
+  top: 2rem; }
+
+.branch .node {
+  margin-top: 12px; }
 
 .child-level .child-container:first-of-type .branch:last-child:after {
   height: 160%; }
@@ -143,18 +152,22 @@ p {
   background: #ffffff;
   border: #E0E5EE 1px solid;
   border-radius: 4px; }
-  .node-button .slds-icon_container {
-    height: 18px;
-    width: 18px;
-    vertical-align: middle; }
-  .node-button svg {
-    vertical-align: top; }
-  .node-button .node-name {
-    font-size: 14px; }
-  .node-button .node-role {
-    font-size: 12px;
-    color: #ABB7C5;
-    display: block; }
+
+.node-button .slds-icon_container {
+  height: 18px;
+  width: 18px;
+  vertical-align: middle; }
+
+.node-button svg {
+  vertical-align: top; }
+
+.node-button .node-name {
+  font-size: 14px; }
+
+.node-button .node-role {
+  font-size: 12px;
+  color: #ABB7C5;
+  display: block; }
 
 .slds-button_neutral {
   text-align: left; }
@@ -166,11 +179,12 @@ p {
   height: 1.5rem;
   z-index: 5;
   padding: 0; }
-  .slds-button.circle-button-edit svg, .slds-button.circle-button-add svg, .slds-button.circle-button-extender svg {
-    width: .7rem;
-    height: .7rem;
-    left: -5px;
-    top: -5px; }
+
+.slds-button.circle-button-edit svg, .slds-button.circle-button-add svg, .slds-button.circle-button-extender svg {
+  width: .7rem;
+  height: .7rem;
+  left: -5px;
+  top: -5px; }
 
 .slds-button.circle-button-edit {
   border: 1px solid #0070D2;

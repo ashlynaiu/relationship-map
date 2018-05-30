@@ -7,14 +7,48 @@ export default [
         object: 'Account',
         cardData: [
             {
-                title: 'Account Details',
+                title: 'Customer',
                 object: 'Account',
-                info: 'information Rachel for card number one'
+                info: [
+                    {
+                        label: 'Total Loans',
+                        field: '$1,378,123'
+                    },
+                    {
+                        label: 'Total Deposits',
+                        field: '$1,100,281'
+                    },
+                    {
+                        label: 'Tier',
+                        field: 'Platinum'
+                    },
+                    {
+                        label: 'Wallet Share',
+                        field: '84%'
+                    },
+                    {
+                        label: 'Marketing Segment',
+                        field: 'High Net Worth'
+                    },
+                    {
+                        label: 'Status',
+                        field: 'Active'
+                    }
+                ]
             },
             {
-                title: 'Open Opportunities',
-                object: 'Opportunity',
-                info: 'information Rachel for card number two'
+                title: 'Summary',
+                object: 'Account',
+                info: [
+                    {
+                        label: 'Number of Financial Accounts',
+                        field: '$1,378,123'
+                    },
+                    {
+                        label: 'Last Interaction',
+                        field: 'March 15, 2018'
+                    }
+                ]
             },
             {
                 title: 'Next Best Actions',

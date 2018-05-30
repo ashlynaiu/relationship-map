@@ -40,8 +40,8 @@ class treeLevel extends Component {
     //To Do: Validate the index is not duplicating
     return (
       <div id={index} className={`${people[0].start ? 'parent-level' : 'child-level'} ${isHide ? 'hide' : ''}`}>
-          {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} objectType='accounts'/>}
-          {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} objectType='contacts'/>}
+        {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} objectType='accounts'/>}
+        {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} objectType='contacts'/>}
       </div>
     )
   }

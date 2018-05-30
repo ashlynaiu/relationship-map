@@ -6,7 +6,6 @@ class treeBranch extends Component {
   constructor(props) {
     super();
     this.hideChildren = this.hideChildren.bind(this);
-    this.clickHandler = this.clickHandler.bind(this);
     this.calculateHeight = this.calculateHeight.bind(this);
     this.state = {
       height: 'inherit',
@@ -38,17 +37,9 @@ class treeBranch extends Component {
   }
 
   hideChildren() {
-    if(this.props.person.children) {
-      let isHide = this.state.isHide;
-      this.setState({ isHide: !isHide });
-      this.calculateHeight();
-    }
-    return
-  }
-
-  clickHandler(newCard) {
-    this.hideChildren();
-    this.props.changeCard(newCard);
+    let isHide = this.state.isHide;
+    this.setState({ isHide: !isHide });
+    this.calculateHeight();
   }
 
   render() {
@@ -59,7 +50,6 @@ class treeBranch extends Component {
     // To do: fix the last child style render!!
     let renderLastChildStyle = () => {
       if(person.object === 'Contact' && this.props.index >= (this.props.lastChild - 1)) {
-        console.log('made it')
         return 'lastChild'
       }
       return ''
@@ -67,8 +57,8 @@ class treeBranch extends Component {
 
     return (
       <div className={`branch ${renderLastChildStyle()}`} style={heightStyle}>
-        <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => this.clickHandler(person.cardData)}>
-          <TreeNode person={person} />
+        <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => changeCard(person.cardData)}>
+          <TreeNode person={person} hideChildren={this.hideChildren}/>
         </div>
         {person.children && <TreeLevel index={person.id} changeCard={changeCard} people={person.children} isHide={this.state.isHide}/>}
       </div>
