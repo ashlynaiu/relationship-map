@@ -43,7 +43,7 @@ class treeBranch extends Component {
   }
 
   render() {
-    const { person, lastChild, changeCard, multiBranch} = this.props;
+    const { person, lastChild, changeCard, index, multiBranch} = this.props;
     let heightStyle = {
         height: this.state.height
     }
@@ -52,10 +52,10 @@ class treeBranch extends Component {
     let renderBranchClasses = () => {
       let branchHidden = this.state.isHide ? 'branch-hidden' : '';
       let lastLevelNode = () => {
-        if (multiBranch && this.props.index >= (this.props.lastChild - 1) && person.object === 'Contact') {
+        if (multiBranch && index >= (lastChild - 1) && person.object === 'Contact') {
           return 'last-node';
         }
-        else if (!multiBranch && this.props.index >= (this.props.lastChild - 1)) {
+        else if (!multiBranch && index >= (lastChild - 1)) {
           return 'last-node';
         }
         else {
