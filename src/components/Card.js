@@ -10,7 +10,7 @@ class Card extends Component {
         <div className="slds-card__header slds-grid">
           <header className="slds-media slds-media_center slds-has-flexi-truncate">
             <div className="slds-media__figure">
-              <Icon object='{card.object}' type='standard' size="small"></Icon>
+              <Icon object={card.object} type="standard" size="small" />
             </div>
             <div className="slds-media__body">
               <h2 className="slds-card__header-title">
@@ -21,12 +21,13 @@ class Card extends Component {
             </div>
           </header>
         </div>
-        <div className="slds-card__body slds-card__body_inner">
+        <div className="slds-card__body slds-card__body_inner card-data">
           {Object
             .keys(card.info)
             .map(key => <CardData
                 key={key}
                 index={key}
+                type={card.object}
                 data={card.info[key]}/>)
           }
         </div>

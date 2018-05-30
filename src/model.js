@@ -38,10 +38,10 @@ export default [
             },
             {
                 title: 'Summary',
-                object: 'Account',
+                object: 'Merge',
                 info: [
                     {
-                        label: 'Number of Financial Accounts',
+                        label: 'Financial Accounts',
                         field: '7'
                     },
                     {
@@ -51,8 +51,8 @@ export default [
                 ]
             },
             {
-                title: 'Team',
-                object: 'Team',
+                title: 'Account Team',
+                object: 'Groups',
                 info: [
                     {
                         label: 'Melinda Smith',
@@ -109,10 +109,10 @@ export default [
                     },
                     {
                         title: 'Summary',
-                        object: 'Account',
+                        object: 'Merge',
                         info: [
                             {
-                                label: 'Number of Financial Accounts',
+                                label: 'Financial Accounts',
                                 field: '4'
                             },
                             {
@@ -122,8 +122,8 @@ export default [
                         ]
                     },
                     {
-                        title: 'Team',
-                        object: 'Team',
+                        title: 'Account Team',
+                        object: 'Groups',
                         info: [
                             {
                                 label: 'Natalie Steele',
@@ -177,10 +177,10 @@ export default [
                     },
                     {
                         title: 'Summary',
-                        object: 'Account',
+                        object: 'Merge',
                         info: [
                             {
-                                label: 'Number of Financial Accounts',
+                                label: 'Financial Accounts',
                                 field: '7'
                             },
                             {
@@ -190,8 +190,8 @@ export default [
                         ]
                     },
                     {
-                        title: 'Team',
-                        object: 'Team',
+                        title: 'Account Team',
+                        object: 'Groups',
                         info: [
                             {
                                 label: 'Natalie Steele',
@@ -244,10 +244,10 @@ export default [
                             },
                             {
                                 title: 'Summary',
-                                object: 'Account',
+                                object: 'Merge',
                                 info: [
                                     {
-                                        label: 'Number of Financial Accounts',
+                                        label: 'Financial Accounts',
                                         field: '3'
                                     },
                                     {
@@ -257,8 +257,8 @@ export default [
                                 ]
                             },
                             {
-                                title: 'Team',
-                                object: 'Team',
+                                title: 'Account Team',
+                                object: 'Groups',
                                 info: [
                                     {
                                         label: 'Lisa Tien',
@@ -286,7 +286,7 @@ export default [
                         cardData: [
                             {
                                 title: 'Customer',
-                                object: 'Account',
+                                object: 'Contact',
                                 info: [
                                     {
                                         label: 'Total Loans',
@@ -316,10 +316,10 @@ export default [
                             },
                             {
                                 title: 'Summary',
-                                object: 'Account',
+                                object: 'Merge',
                                 info: [
                                     {
-                                        label: 'Number of Financial Accounts',
+                                        label: 'Financial Accounts',
                                         field: '2'
                                     },
                                     {
@@ -329,8 +329,8 @@ export default [
                                 ]
                             },
                             {
-                                title: 'Team',
-                                object: 'Team',
+                                title: 'Account Team',
+                                object: 'Groups',
                                 info: [
                                     {
                                         label: 'Amanda Rollins',
@@ -357,7 +357,7 @@ export default [
                                 cardData: [
                                     {
                                         title: 'Customer',
-                                        object: 'Account',
+                                        object: 'Contact',
                                         info: [
                                             {
                                                 label: 'Total Loans',
@@ -387,10 +387,10 @@ export default [
                                     },
                                     {
                                         title: 'Summary',
-                                        object: 'Account',
+                                        object: 'Merge',
                                         info: [
                                             {
-                                                label: 'Number of Financial Accounts',
+                                                label: 'Financial Accounts',
                                                 field: '1'
                                             },
                                             {
@@ -400,8 +400,8 @@ export default [
                                         ]
                                     },
                                     {
-                                        title: 'Team',
-                                        object: 'Team',
+                                        title: 'Account Team',
+                                        object: 'Groups',
                                         info: [
                                             {
                                                 label: 'Lisa Tien',
@@ -429,7 +429,7 @@ export default [
                                 cardData: [
                                     {
                                         title: 'Customer',
-                                        object: 'Account',
+                                        object: 'Contact',
                                         info: [
                                             {
                                                 label: 'Total Loans',
@@ -459,10 +459,10 @@ export default [
                                     },
                                     {
                                         title: 'Summary',
-                                        object: 'Account',
+                                        object: 'Merge',
                                         info: [
                                             {
-                                                label: 'Number of Financial Accounts',
+                                                label: 'Financial Accounts',
                                                 field: '3'
                                             },
                                             {
@@ -472,8 +472,8 @@ export default [
                                         ]
                                     },
                                     {
-                                        title: 'Team',
-                                        object: 'Team',
+                                        title: 'Account Team',
+                                        object: 'Groups',
                                         info: [
                                             {
                                                 label: 'Lisa Tien',
@@ -535,10 +535,10 @@ export default [
                     },
                     {
                         title: 'Summary',
-                        object: 'Account',
+                        object: 'Merge',
                         info: [
                             {
-                                label: 'Number of Financial Accounts',
+                                label: 'Financial Accounts',
                                 field: '2'
                             },
                             {
@@ -548,8 +548,8 @@ export default [
                         ]
                     },
                     {
-                        title: 'Team',
-                        object: 'Team',
+                        title: 'Account Team',
+                        object: 'Groups',
                         info: [
                             {
                                 label: 'Natalie Steele',
@@ -566,14 +566,14 @@ export default [
             },
             {
                 id: 9,
-                name: 'Rachel Adams',
+                name: 'Danny Liles',
                 role: 'CEO',
                 start: false,
                 object: 'Contact',
                 cardData: [
                     {
                         title: 'Customer',
-                        object: 'Account',
+                        object: 'Contact',
                         info: [
                             {
                                 label: 'Total Loans',
@@ -603,10 +603,10 @@ export default [
                     },
                     {
                         title: 'Summary',
-                        object: 'Account',
+                        object: 'Merge',
                         info: [
                             {
-                                label: 'Number of Financial Accounts',
+                                label: 'Financial Accounts',
                                 field: '2'
                             },
                             {
@@ -616,8 +616,8 @@ export default [
                         ]
                     },
                     {
-                        title: 'Team',
-                        object: 'Team',
+                        title: 'Account Team',
+                        object: 'Groups',
                         info: [
                             {
                                 label: 'Amanda Rollins',
@@ -638,13 +638,13 @@ export default [
                     {
                         id: 10,
                         name: 'Bob Adams',
-                        role: 'Husband',
+                        role: 'Son',
                         start: false,
                         object: 'Contact',
                         cardData: [
                             {
                                 title: 'Customer',
-                                object: 'Account',
+                                object: 'Contact',
                                 info: [
                                     {
                                         label: 'Total Loans',
@@ -674,10 +674,10 @@ export default [
                             },
                             {
                                 title: 'Summary',
-                                object: 'Account',
+                                object: 'Merge',
                                 info: [
                                     {
-                                        label: 'Number of Financial Accounts',
+                                        label: 'Financial Accounts',
                                         field: '1'
                                     },
                                     {
@@ -687,8 +687,8 @@ export default [
                                 ]
                             },
                             {
-                                title: 'Team',
-                                object: 'Team',
+                                title: 'Account Team',
+                                object: 'Groups',
                                 info: [
                                     {
                                         label: 'Lisa Tien',
@@ -708,44 +708,32 @@ export default [
                         children: [
                             {
                                 id: 11,
-                                name: 'Adams Trust',
-                                role: 'Trust Account',
+                                name: 'Katrina Lapria',
+                                role: 'Attorney',
                                 start: false,
-                                object: 'Account',
+                                object: 'Contact',
                                 cardData: [
                                     {
                                         title: 'Customer',
-                                        object: 'Account',
+                                        object: 'Contact',
                                         info: [
                                             {
-                                                label: 'Balance',
-                                                field: '$1,650,000'
+                                                label: 'Email',
+                                                field: 'klapria@gmail.com'
                                             },
                                             {
-                                                label: 'Ownership',
-                                                field: 'Trust'
+                                                label: 'Phone Number',
+                                                field: '650-456-1321'
                                             },
                                             {
                                                 label: 'Type',
-                                                field: 'Mutal Fund'
-                                            },
-                                            {
-                                                label: 'Primary Owner',
-                                                field: 'Rachel Adams'
-                                            },
-                                            {
-                                                label: 'Joint Owner',
-                                                field: 'Bob Adams'
-                                            },
-                                            {
-                                                label: 'Status',
-                                                field: 'Open'
+                                                field: 'Small Business'
                                             }
                                         ]
                                     },
                                     {
-                                        title: 'Team',
-                                        object: 'Team',
+                                        title: 'Account Team',
+                                        object: 'Groups',
                                         info: [
                                             {
                                                 label: 'Philip Lim',
@@ -760,8 +748,8 @@ export default [
                     },
                     {
                         id: 12,
-                        name: 'Lily Adams',
-                        role: '',
+                        name: 'Curtis Elliot',
+                        role: 'Son',
                         start: false,
                         object: 'Contact',
                         cardData: [
@@ -797,10 +785,10 @@ export default [
                             },
                             {
                                 title: 'Summary',
-                                object: 'Account',
+                                object: 'Merge',
                                 info: [
                                     {
-                                        label: 'Number of Financial Accounts',
+                                        label: 'Financial Accounts',
                                         field: '3'
                                     },
                                     {
@@ -810,8 +798,8 @@ export default [
                                 ]
                             },
                             {
-                                title: 'Team',
-                                object: 'Team',
+                                title: 'Account Team',
+                                object: 'Groups',
                                 info: [
                                     {
                                         label: 'Lisa Tien',
@@ -871,10 +859,10 @@ export default [
                     },
                     {
                         title: 'Summary',
-                        object: 'Account',
+                        object: 'Merge',
                         info: [
                             {
-                                label: 'Number of Financial Accounts',
+                                label: 'Financial Accounts',
                                 field: '5'
                             },
                             {
@@ -884,8 +872,8 @@ export default [
                         ]
                     },
                     {
-                        title: 'Team',
-                        object: 'Team',
+                        title: 'Account Team',
+                        object: 'Groups',
                         info: [
                             {
                                 label: 'Lisa Tien',
