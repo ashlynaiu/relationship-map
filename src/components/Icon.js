@@ -8,7 +8,6 @@ class Icon extends Component {
     let object = this.props.object.toLowerCase();
 
     let renderStandard = () => {
-        console.log(object);
         return (
             <span className={`slds-icon_container slds-m-right_x-small slds-icon-standard-${object}`} title="">
                 <svg className={`slds-icon slds-icon_${size}`} aria-hidden="true">

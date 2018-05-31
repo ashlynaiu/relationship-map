@@ -19,7 +19,7 @@ class treeContainer extends Component {
   }
 
   render () {
-    const { people, changeCard, objectType, multiBranch} = this.props;
+    const { people, changeCard, active, objectType, multiBranch} = this.props;
     let expandedIcon = 'chevrondown';
     let collapsedIcon = 'chevronright';
     let lastChild = people.length;
@@ -47,6 +47,7 @@ class treeContainer extends Component {
                 key={key}
                 index={key}
                 changeCard={changeCard}
+                active={active}
                 lastChild={lastChild}
                 multiBranch={multiBranch}
                 person={people[key]}/>)
