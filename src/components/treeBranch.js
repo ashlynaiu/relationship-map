@@ -51,6 +51,7 @@ class treeBranch extends Component {
     //The ultimate class hack. Please fix me.
     let renderBranchClasses = () => {
       let branchHidden = this.state.isHide ? 'branch-hidden ' : '';
+      let parentNode = person.start ? ' first-branch' : '';
       let lastLevelNode = () => {
         if (multiBranch && index >= (lastChild - 1) && person.object === 'Contact') {
           return 'last-node';
@@ -62,12 +63,12 @@ class treeBranch extends Component {
           return '';
         }
       }
-      return (branchHidden.concat(lastLevelNode()));
+      return (branchHidden.concat(lastLevelNode()).concat(parentNode));
     }
 
     return (
       <div className={`branch ${renderBranchClasses()}`} style={heightStyle}>
-        <div className={`${person.start ? 'first-node' : 'node'} ${active == person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
+        <div className={`${person.start ? 'first-node' : 'node'} ${active === person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
           <TreeNode person={person} hideChildren={this.hideChildren}/>
         </div>
         {person.children && <TreeLevel index={person.id} changeCard={changeCard} active={active} people={person.children} isHide={this.state.isHide}/>}

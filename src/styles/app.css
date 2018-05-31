@@ -111,9 +111,6 @@ p {
 .child-level .child-container .container-header.collapse-header:after {
   content: none; }
 
-.child-level .child-container .active {
-  background: red; }
-
 .child-level .child-container .container-header:after {
   position: absolute;
   content: "";
@@ -148,8 +145,15 @@ p {
 .child-level .child-container:first-of-type .branch:last-child:after {
   height: 160%; }
 
-.lastChild:after {
+.lastChild:after, .first-branch:after {
   content: none; }
+
+.first-branch:before {
+  content: none; }
+
+.node.active .node-button {
+  border: #0070d2 1px solid;
+  box-shadow: 0px 0px 5px 0px #0070d2; }
 
 .node-button {
   display: flex;
@@ -208,6 +212,9 @@ p {
   right: -10px;
   line-height: 1; }
 
+.right-panel .slds-media__figure {
+  margin-right: 0; }
+
 .card-data {
   display: flex;
   flex-wrap: wrap;
@@ -249,3 +256,6 @@ p {
 
 .crud-hide {
   display: none; }
+
+.slds-icon-standard-contact {
+  background-color: #00D2BE !important; }

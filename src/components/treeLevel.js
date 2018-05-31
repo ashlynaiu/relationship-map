@@ -17,6 +17,7 @@ class treeLevel extends Component {
     let children = this.props.people;
     let accounts = [];
     let contacts = [];
+
     for (let i = 0; i < children.length; i++) {
       if (children[i].object === 'Account') {
         accounts.push(children[i]);

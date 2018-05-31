@@ -200,8 +200,7 @@ p
         &.collapse-header
             &:after
                 content: none
-    .active
-        background: red
+
 //Allow header to extend to lower node
 .child-level .child-container .container-header:after
     position: absolute
@@ -243,9 +242,19 @@ p
     &:after
         height: 160%
 
-.lastChild
+.lastChild, .first-branch
     &:after
         content: none
+
+.first-branch
+    &:before
+        content: none
+
+//Node Focus Classes
+.node.active .node-button
+    border: rgba(0,112,210,1) 1px solid
+    box-shadow: 0px 0px 5px 0px rgba(0,112,210,1)
+
 ///////////////
 /////Node/////
 /////////////
@@ -313,8 +322,8 @@ p
 ////////////////////
 /////Data Card/////
 //////////////////
-// .right-panel .slds-media__figure
-//     margin-right: 0
+.right-panel .slds-media__figure
+    margin-right: 0
 
 .card-data
     display: flex
@@ -358,3 +367,9 @@ p
 
 .crud-hide
     display: none
+
+///////////////////////////
+/////Other Overwrites/////
+/////////////////////////
+.slds-icon-standard-contact
+    background-color: #00D2BE !important

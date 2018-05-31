@@ -7,7 +7,7 @@ export default [
         object: 'Account',
         cardData: [
             {
-                title: 'Customer',
+                title: 'Cloud Enterprise Details',
                 object: 'Account',
                 info: [
                     {
@@ -78,7 +78,7 @@ export default [
                 object: 'Account',
                 cardData: [
                     {
-                        title: 'Customer',
+                        title: 'Treasury Details',
                         object: 'Account',
                         info: [
                             {
@@ -140,13 +140,13 @@ export default [
             },
             {
                 id: 3,
-                name: 'Nimbus Inc',
+                name: 'Nimbus Inc.',
                 role: '',
                 start: false,
                 object: 'Account',
                 cardData: [
                     {
-                        title: 'Customer',
+                        title: 'Nimbus Inc. Details',
                         object: 'Account',
                         info: [
                             {
@@ -213,7 +213,7 @@ export default [
                         object: 'Account',
                         cardData: [
                             {
-                                title: 'Customer',
+                                title: 'Nimbus Foundation Details',
                                 object: 'Account',
                                 info: [
                                     {
@@ -285,7 +285,7 @@ export default [
                         object: 'Contact',
                         cardData: [
                             {
-                                title: 'Customer',
+                                title: 'Rachel Adams Details',
                                 object: 'Contact',
                                 info: [
                                     {
@@ -356,7 +356,7 @@ export default [
                                 object: 'Contact',
                                 cardData: [
                                     {
-                                        title: 'Customer',
+                                        title: 'Bob Adams Details',
                                         object: 'Contact',
                                         info: [
                                             {
@@ -428,7 +428,7 @@ export default [
                                 object: 'Contact',
                                 cardData: [
                                     {
-                                        title: 'Customer',
+                                        title: 'Lily Adams Details',
                                         object: 'Contact',
                                         info: [
                                             {
@@ -504,7 +504,7 @@ export default [
                 object: 'Account',
                 cardData: [
                     {
-                        title: 'Customer',
+                        title: 'Stratus Details',
                         object: 'Account',
                         info: [
                             {
@@ -572,7 +572,7 @@ export default [
                 object: 'Contact',
                 cardData: [
                     {
-                        title: 'Customer',
+                        title: 'Danny Liles Details',
                         object: 'Contact',
                         info: [
                             {
@@ -637,13 +637,13 @@ export default [
                 children: [
                     {
                         id: 10,
-                        name: 'Bob Adams',
+                        name: 'Sam Adams',
                         role: 'Son',
                         start: false,
                         object: 'Contact',
                         cardData: [
                             {
-                                title: 'Customer',
+                                title: 'Sam Adams Details',
                                 object: 'Contact',
                                 info: [
                                     {
@@ -714,7 +714,7 @@ export default [
                                 object: 'Contact',
                                 cardData: [
                                     {
-                                        title: 'Customer',
+                                        title: 'Katrina Lapri Details',
                                         object: 'Contact',
                                         info: [
                                             {
@@ -754,7 +754,7 @@ export default [
                         object: 'Contact',
                         cardData: [
                             {
-                                title: 'Customer',
+                                title: 'Curtis Elliot Details',
                                 object: 'Contact',
                                 info: [
                                     {
@@ -828,7 +828,7 @@ export default [
                 object: 'Contact',
                 cardData: [
                     {
-                        title: 'Customer',
+                        title: 'Robert Harris Details',
                         object: 'Contact',
                         info: [
                             {
