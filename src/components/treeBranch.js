@@ -43,7 +43,7 @@ class treeBranch extends Component {
   }
 
   render() {
-    const { person, lastChild, changeCard, index, multiBranch} = this.props;
+    const { person, lastChild, changeCard, active, index, multiBranch} = this.props;
     let heightStyle = {
         height: this.state.height
     }
@@ -67,10 +67,10 @@ class treeBranch extends Component {
 
     return (
       <div className={`branch ${renderBranchClasses()}`} style={heightStyle}>
-        <div className={`${person.start ? 'first-node' : 'node'}`} onClick={() => changeCard(person.cardData)}>
+        <div className={`${person.start ? 'first-node' : 'node'} ${active == person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
           <TreeNode person={person} hideChildren={this.hideChildren}/>
         </div>
-        {person.children && <TreeLevel index={person.id} changeCard={changeCard} people={person.children} isHide={this.state.isHide}/>}
+        {person.children && <TreeLevel index={person.id} changeCard={changeCard} active={active} people={person.children} isHide={this.state.isHide}/>}
       </div>
     )
   }

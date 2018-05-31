@@ -9,7 +9,8 @@ class App extends Component {
     this.changeCard = this.changeCard.bind(this);
     this.state = {
       people: data,
-      cards: []
+      cards: [],
+      active: null
     };
   }
 
@@ -17,15 +18,15 @@ class App extends Component {
     return this.setState({ cards: this.state.people[0].cardData })
   }
 
-  changeCard(newCards) {
-    return this.setState({ cards: newCards })
+  changeCard(newCards, active) {
+    return this.setState({ cards: newCards, active: active})
   }
 
   render() {
     let cards = {...this.state.cards};
     return (
       <div className="container">
-        <Tree people={this.state.people} changeCard={this.changeCard}></Tree>
+        <Tree people={this.state.people} changeCard={this.changeCard} active={this.state.active} ></Tree>
         <div className="right-panel">
           {Object
             .keys(cards)

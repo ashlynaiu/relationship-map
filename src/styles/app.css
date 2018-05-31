@@ -111,6 +111,9 @@ p {
 .child-level .child-container .container-header.collapse-header:after {
   content: none; }
 
+.child-level .child-container .active {
+  background: red; }
+
 .child-level .child-container .container-header:after {
   position: absolute;
   content: "";
