@@ -205,9 +205,6 @@ p {
   right: -10px;
   line-height: 1; }
 
-.right-panel .slds-media__figure {
-  margin-right: 0; }
-
 .card-data {
   display: flex;
   flex-wrap: wrap;

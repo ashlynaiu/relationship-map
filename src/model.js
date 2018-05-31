@@ -755,7 +755,7 @@ export default [
                         cardData: [
                             {
                                 title: 'Customer',
-                                object: 'Account',
+                                object: 'Contact',
                                 info: [
                                     {
                                         label: 'Total Loans',
@@ -829,7 +829,7 @@ export default [
                 cardData: [
                     {
                         title: 'Customer',
-                        object: 'Account',
+                        object: 'Contact',
                         info: [
                             {
                                 label: 'Total Loans',

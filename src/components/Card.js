@@ -14,9 +14,7 @@ class Card extends Component {
             </div>
             <div className="slds-media__body">
               <h2 className="slds-card__header-title">
-                <a href="javascript:void(0);" className="slds-card__header-link slds-truncate" title="Accounts">
                   <span className="slds-text-heading_small">{card.title}</span>
-                </a>
               </h2>
             </div>
           </header>

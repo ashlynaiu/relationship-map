@@ -50,7 +50,7 @@ class treeBranch extends Component {
 
     //The ultimate class hack. Please fix me.
     let renderBranchClasses = () => {
-      let branchHidden = this.state.isHide ? 'branch-hidden' : '';
+      let branchHidden = this.state.isHide ? 'branch-hidden ' : '';
       let lastLevelNode = () => {
         if (multiBranch && index >= (lastChild - 1) && person.object === 'Contact') {
           return 'last-node';
