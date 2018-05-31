@@ -40,20 +40,17 @@ p {
   line-height: 24px;
   font-weight: 300; }
 
-@media only screen and (min-width: 1000px) {
-  .container {
-    display: flex;
-    justify-content: space-between; } }
+.container {
+  display: flex;
+  justify-content: space-between; }
 
-@media only screen and (min-width: 1000px) {
-  .right-panel {
-    width: 30%;
-    padding-left: 20px; } }
+.right-panel {
+  width: 35%;
+  padding-left: 20px; }
 
-@media only screen and (min-width: 680px) and (max-width: 999px) {
-  .right-panel {
-    display: flex;
-    justify-content: space-between; } }
+.right-panel .slds-card {
+  max-width: 500px;
+  min-width: 350px; }
 
 .tree {
   position: relative;

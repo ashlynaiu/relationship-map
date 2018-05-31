@@ -124,18 +124,15 @@ p
 /////Layout/////
 ///////////////
 .container
-    @include media(above-small-screens)
-        display: flex
-        justify-content: space-between
+    display: flex
+    justify-content: space-between
 
 .right-panel
-    @include media(above-small-screens)
-        width: 30%
-        padding-left: 20px
-
-    @include media(small-screens)
-        display: flex
-        justify-content: space-between
+    width: 35%
+    padding-left: 20px
+    .slds-card
+        max-width: 500px
+        min-width: 350px
 
 ///////////////
 /////Tree/////
