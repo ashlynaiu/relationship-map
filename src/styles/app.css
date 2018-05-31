@@ -58,7 +58,7 @@ p {
 .tree {
   position: relative;
   overflow-y: scroll;
-  height: 600px;
+  height: 700px;
   width: 100%; }
 
 .parent-level, .child-level .child-container {
@@ -160,7 +160,7 @@ p {
   width: 10rem;
   position: relative;
   height: 4rem;
-  padding: 1rem;
+  padding: .75rem .5rem;
   background: #ffffff;
   border: #E0E5EE 1px solid;
   border-radius: 4px; }

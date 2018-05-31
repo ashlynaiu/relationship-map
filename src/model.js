@@ -1,13 +1,13 @@
 export default [
     {
         id: 1,
-        name: 'Cloud Enterprise',
+        name: 'Rachel Adams',
         role: '',
         start: true,
         object: 'Account',
         cardData: [
             {
-                title: 'Cloud Enterprise Details',
+                title: 'Rachel Adams Details',
                 object: 'Account',
                 info: [
                     {
@@ -72,13 +72,13 @@ export default [
         children: [
             {
                 id: 2,
-                name: 'Treasury',
-                role: 'Service',
+                name: 'Nimbus Inc',
+                role: 'Small Business',
                 start: false,
                 object: 'Account',
                 cardData: [
                     {
-                        title: 'Treasury Details',
+                        title: 'Nimbus Inc Details',
                         object: 'Account',
                         info: [
                             {
@@ -140,13 +140,13 @@ export default [
             },
             {
                 id: 3,
-                name: 'Nimbus Inc.',
+                name: 'Adams Household',
                 role: '',
                 start: false,
                 object: 'Account',
                 cardData: [
                     {
-                        title: 'Nimbus Inc. Details',
+                        title: 'Adams Household Details',
                         object: 'Account',
                         info: [
                             {
@@ -207,13 +207,13 @@ export default [
                 children: [
                     {
                         id: 4,
-                        name: 'Nimbus Foundation',
-                        role: '',
+                        name: 'Adams Trust',
+                        role: 'Family Trust',
                         start: false,
                         object: 'Account',
                         cardData: [
                             {
-                                title: 'Nimbus Foundation Details',
+                                title: 'Adams Trust Details',
                                 object: 'Account',
                                 info: [
                                     {
@@ -279,13 +279,158 @@ export default [
                     },
                     {
                         id: 5,
-                        name: 'Rachel Adams',
-                        role: 'CEO',
+                        name: 'Liles Household',
+                        role: 'Child Household',
+                        start: false,
+                        object: 'Account',
+                        cardData: [
+                            {
+                                title: 'Liles Household Details',
+                                object: 'Account',
+                                info: [
+                                    {
+                                        label: 'Total Loans',
+                                        field: '$778,234'
+                                    },
+                                    {
+                                        label: 'Total Deposits',
+                                        field: '$16,100,000'
+                                    },
+                                    {
+                                        label: 'Tier',
+                                        field: 'Plantinum'
+                                    },
+                                    {
+                                        label: 'Wallet Share',
+                                        field: '68%'
+                                    },
+                                    {
+                                        label: 'Marketing Segment',
+                                        field: 'High net worth'
+                                    },
+                                    {
+                                        label: 'Status',
+                                        field: 'Active'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Summary',
+                                object: 'Merge',
+                                info: [
+                                    {
+                                        label: 'Financial Accounts',
+                                        field: '3'
+                                    },
+                                    {
+                                        label: 'Last Interaction',
+                                        field: 'December 17, 2017'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Account Team',
+                                object: 'Groups',
+                                info: [
+                                    {
+                                        label: 'Lisa Tien',
+                                        field: 'Relationship Manager'
+                                    },
+                                    {
+                                        label: 'Juan Gamez',
+                                        field: 'Risk Manager'
+                                    },
+                                    {
+                                        label: 'Maggie Lynn',
+                                        field: 'Relationship banker'
+                                    }
+                                ]
+                            }
+                        ],
+                        children: [
+                            {
+                                id: 6,
+                                name: 'Danny Liles',
+                                role: 'Son',
+                                start: false,
+                                object: 'Contact',
+                                cardData: [
+                                    {
+                                        title: 'Danny Liles Details',
+                                        object: 'Contact',
+                                        info: [
+                                            {
+                                                label: 'Total Loans',
+                                                field: '$778,234'
+                                            },
+                                            {
+                                                label: 'Total Deposits',
+                                                field: '$16,100,000'
+                                            },
+                                            {
+                                                label: 'Tier',
+                                                field: 'Plantinum'
+                                            },
+                                            {
+                                                label: 'Wallet Share',
+                                                field: '68%'
+                                            },
+                                            {
+                                                label: 'Marketing Segment',
+                                                field: 'High net worth'
+                                            },
+                                            {
+                                                label: 'Status',
+                                                field: 'Active'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Summary',
+                                        object: 'Merge',
+                                        info: [
+                                            {
+                                                label: 'Financial Accounts',
+                                                field: '3'
+                                            },
+                                            {
+                                                label: 'Last Interaction',
+                                                field: 'December 17, 2017'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Account Team',
+                                        object: 'Groups',
+                                        info: [
+                                            {
+                                                label: 'Lisa Tien',
+                                                field: 'Relationship Manager'
+                                            },
+                                            {
+                                                label: 'Juan Gamez',
+                                                field: 'Risk Manager'
+                                            },
+                                            {
+                                                label: 'Maggie Lynn',
+                                                field: 'Relationship banker'
+                                            }
+                                        ]
+                                    }
+                                ],
+                                children: null
+                            }
+                        ]
+                    },
+                    {
+                        id: 7,
+                        name: 'Nigel Adams',
+                        role: 'Husband',
                         start: false,
                         object: 'Contact',
                         cardData: [
                             {
-                                title: 'Rachel Adams Details',
+                                title: 'Nigel Adams Details',
                                 object: 'Contact',
                                 info: [
                                     {
@@ -349,15 +494,15 @@ export default [
                         ],
                         children: [
                             {
-                                id: 6,
-                                name: 'Bob Adams',
-                                role: 'Husband',
+                                id: 8,
+                                name: 'Cumulus LLC',
+                                role: 'Board Member',
                                 start: false,
-                                object: 'Contact',
+                                object: 'Account',
                                 cardData: [
                                     {
-                                        title: 'Bob Adams Details',
-                                        object: 'Contact',
+                                        title: 'Cumulus LLC Details',
+                                        object: 'Account',
                                         info: [
                                             {
                                                 label: 'Total Loans',
@@ -420,91 +565,19 @@ export default [
                                 ],
                                 children: null
                             },
-                            {
-                                id: 7,
-                                name: 'Lily Adams',
-                                role: '',
-                                start: false,
-                                object: 'Contact',
-                                cardData: [
-                                    {
-                                        title: 'Lily Adams Details',
-                                        object: 'Contact',
-                                        info: [
-                                            {
-                                                label: 'Total Loans',
-                                                field: '$908,588'
-                                            },
-                                            {
-                                                label: 'Total Deposits',
-                                                field: '$1,505,762'
-                                            },
-                                            {
-                                                label: 'Tier',
-                                                field: 'Gold'
-                                            },
-                                            {
-                                                label: 'Wallet Share',
-                                                field: '67%'
-                                            },
-                                            {
-                                                label: 'Marketing Segment',
-                                                field: 'High net worth'
-                                            },
-                                            {
-                                                label: 'Status',
-                                                field: 'Active'
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        title: 'Summary',
-                                        object: 'Merge',
-                                        info: [
-                                            {
-                                                label: 'Financial Accounts',
-                                                field: '3'
-                                            },
-                                            {
-                                                label: 'Last Interaction',
-                                                field: 'Feburary 28, 2018'
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        title: 'Account Team',
-                                        object: 'Groups',
-                                        info: [
-                                            {
-                                                label: 'Lisa Tien',
-                                                field: 'Relationship Manager'
-                                            },
-                                            {
-                                                label: 'Juan Gamez',
-                                                field: 'Risk Manager'
-                                            },
-                                            {
-                                                label: 'Maggie Lynn',
-                                                field: 'Relationship banker'
-                                            }
-                                        ]
-                                    }
-                                ],
-                                children: null
-                            }
                         ]
                     }
                 ]
             },
             {
-                id: 8,
-                name: 'Stratus',
-                role: 'Retail',
+                id: 9,
+                name: 'Nimbus Founda...',
+                role: 'Non-Profit',
                 start: false,
                 object: 'Account',
                 cardData: [
                     {
-                        title: 'Stratus Details',
+                        title: 'Nimbus Foundation Details',
                         object: 'Account',
                         info: [
                             {
@@ -565,14 +638,14 @@ export default [
                 children: null
             },
             {
-                id: 9,
-                name: 'Danny Liles',
-                role: 'CEO',
+                id: 10,
+                name: 'Katrina Lapria',
+                role: 'Business Partner',
                 start: false,
                 object: 'Contact',
                 cardData: [
                     {
-                        title: 'Danny Liles Details',
+                        title: 'Katrina Lapria Details',
                         object: 'Contact',
                         info: [
                             {
@@ -636,15 +709,15 @@ export default [
                 ],
                 children: [
                     {
-                        id: 10,
-                        name: 'Sam Adams',
-                        role: 'Son',
+                        id: 11,
+                        name: 'Lapria Household',
+                        role: 'Household',
                         start: false,
-                        object: 'Contact',
+                        object: 'Account',
                         cardData: [
                             {
-                                title: 'Sam Adams Details',
-                                object: 'Contact',
+                                title: 'Katrina Lapria Household',
+                                object: 'Account',
                                 info: [
                                     {
                                         label: 'Total Loans',
@@ -707,19 +780,19 @@ export default [
                         ],
                         children: [
                             {
-                                id: 11,
-                                name: 'Katrina Lapria',
+                                id: 12,
+                                name: 'Mary Tooby',
                                 role: 'Attorney',
                                 start: false,
                                 object: 'Contact',
                                 cardData: [
                                     {
-                                        title: 'Katrina Lapri Details',
+                                        title: 'Mary Tooby Details',
                                         object: 'Contact',
                                         info: [
                                             {
                                                 label: 'Email',
-                                                field: 'klapria@gmail.com'
+                                                field: 'mtooby@gmail.com'
                                             },
                                             {
                                                 label: 'Phone Number',
@@ -743,57 +816,171 @@ export default [
                                     }
                                 ],
                                 children: null
+                            },
+                            {
+                                id: 13,
+                                name: 'Curtis Lapria',
+                                role: 'Son',
+                                start: false,
+                                object: 'Contact',
+                                cardData: [
+                                    {
+                                        title: 'Curtis Lapria Details',
+                                        object: 'Contact',
+                                        info: [
+                                            {
+                                                label: 'Total Loans',
+                                                field: '$608,123'
+                                            },
+                                            {
+                                                label: 'Total Deposits',
+                                                field: '$2,945,209'
+                                            },
+                                            {
+                                                label: 'Tier',
+                                                field: 'Platinum'
+                                            },
+                                            {
+                                                label: 'Wallet Share',
+                                                field: '83%'
+                                            },
+                                            {
+                                                label: 'Marketing Segment',
+                                                field: 'High net worth'
+                                            },
+                                            {
+                                                label: 'Status',
+                                                field: 'Active'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Summary',
+                                        object: 'Merge',
+                                        info: [
+                                            {
+                                                label: 'Financial Accounts',
+                                                field: '2'
+                                            },
+                                            {
+                                                label: 'Last Interaction',
+                                                field: 'March 1, 2018'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Account Team',
+                                        object: 'Groups',
+                                        info: [
+                                            {
+                                                label: 'Amanda Rollins',
+                                                field: 'Relationship Manager'
+                                            },
+                                            {
+                                                label: 'Carole Hernande',
+                                                field: 'Risk Manager'
+                                            },
+                                            {
+                                                label: 'Jane Johnson',
+                                                field: 'Relationship banker'
+                                            }
+                                        ]
+                                    }
+                                ],
+                                children: null
+                            },
+                            {
+                                id: 14,
+                                name: 'Stratus LLC',
+                                role: 'Small Business',
+                                start: false,
+                                object: 'Account',
+                                cardData: [
+                                    {
+                                        title: 'Stratus Details',
+                                        object: 'Account',
+                                        info: [
+                                            {
+                                                label: 'Total Loans',
+                                                field: '$878,123'
+                                            },
+                                            {
+                                                label: 'Total Deposits',
+                                                field: '$700,762'
+                                            },
+                                            {
+                                                label: 'Tier',
+                                                field: 'Bronze'
+                                            },
+                                            {
+                                                label: 'Wallet Share',
+                                                field: '34%'
+                                            },
+                                            {
+                                                label: 'Marketing Segment',
+                                                field: 'Medium net worth'
+                                            },
+                                            {
+                                                label: 'Status',
+                                                field: 'Active'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Summary',
+                                        object: 'Merge',
+                                        info: [
+                                            {
+                                                label: 'Financial Accounts',
+                                                field: '2'
+                                            },
+                                            {
+                                                label: 'Last Interaction',
+                                                field: 'January 17, 2018'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: 'Account Team',
+                                        object: 'Groups',
+                                        info: [
+                                            {
+                                                label: 'Natalie Steele',
+                                                field: 'Relationship Manager'
+                                            },
+                                            {
+                                                label: 'Robert Ng',
+                                                field: 'Commercial Banker'
+                                            }
+                                        ]
+                                    }
+                                ],
+                                children: null
                             }
                         ]
                     },
                     {
-                        id: 12,
-                        name: 'Curtis Elliot',
-                        role: 'Son',
+                        id: 15,
+                        name: 'John Lin',
+                        role: 'Attorney',
                         start: false,
                         object: 'Contact',
                         cardData: [
                             {
-                                title: 'Curtis Elliot Details',
+                                title: 'John Lin Details',
                                 object: 'Contact',
                                 info: [
                                     {
-                                        label: 'Total Loans',
-                                        field: '$908,588'
+                                        label: 'Email',
+                                        field: 'jlin@gmail.com'
                                     },
                                     {
-                                        label: 'Total Deposits',
-                                        field: '$1,505,762'
+                                        label: 'Phone Number',
+                                        field: '254-131-1396'
                                     },
                                     {
-                                        label: 'Tier',
-                                        field: 'Gold'
-                                    },
-                                    {
-                                        label: 'Wallet Share',
-                                        field: '67%'
-                                    },
-                                    {
-                                        label: 'Marketing Segment',
-                                        field: 'High net worth'
-                                    },
-                                    {
-                                        label: 'Status',
-                                        field: 'Active'
-                                    }
-                                ]
-                            },
-                            {
-                                title: 'Summary',
-                                object: 'Merge',
-                                info: [
-                                    {
-                                        label: 'Financial Accounts',
-                                        field: '3'
-                                    },
-                                    {
-                                        label: 'Last Interaction',
-                                        field: 'Feburary 28, 2018'
+                                        label: 'Type',
+                                        field: 'Small Business'
                                     }
                                 ]
                             },
@@ -802,16 +989,8 @@ export default [
                                 object: 'Groups',
                                 info: [
                                     {
-                                        label: 'Lisa Tien',
-                                        field: 'Relationship Manager'
-                                    },
-                                    {
-                                        label: 'Juan Gamez',
-                                        field: 'Risk Manager'
-                                    },
-                                    {
-                                        label: 'Maggie Lynn',
-                                        field: 'Relationship banker'
+                                        label: 'Philip Lim',
+                                        field: 'Financial Advisor'
                                     }
                                 ]
                             }
@@ -821,9 +1000,9 @@ export default [
                 ]
             },
             {
-                id: 13,
+                id: 16,
                 name: 'Robert Harris',
-                role: 'President',
+                role: 'Lawyer',
                 start: false,
                 object: 'Contact',
                 cardData: [
@@ -832,42 +1011,16 @@ export default [
                         object: 'Contact',
                         info: [
                             {
-                                label: 'Total Loans',
-                                field: '$1,908,622'
+                                label: 'Email',
+                                field: 'rharris@gmail.com'
                             },
                             {
-                                label: 'Total Deposits',
-                                field: '$2,505,398'
+                                label: 'Phone Number',
+                                field: '650-456-1321'
                             },
                             {
-                                label: 'Tier',
-                                field: 'Plantinum'
-                            },
-                            {
-                                label: 'Wallet Share',
-                                field: '78%'
-                            },
-                            {
-                                label: 'Marketing Segment',
-                                field: 'High net worth'
-                            },
-                            {
-                                label: 'Status',
-                                field: 'Active'
-                            }
-                        ]
-                    },
-                    {
-                        title: 'Summary',
-                        object: 'Merge',
-                        info: [
-                            {
-                                label: 'Financial Accounts',
-                                field: '5'
-                            },
-                            {
-                                label: 'Last Interaction',
-                                field: 'January 27, 2018'
+                                label: 'Type',
+                                field: 'Small Business'
                             }
                         ]
                     },
@@ -876,16 +1029,8 @@ export default [
                         object: 'Groups',
                         info: [
                             {
-                                label: 'Lisa Tien',
-                                field: 'Relationship Manager'
-                            },
-                            {
-                                label: 'Juan Gamez',
-                                field: 'Risk Manager'
-                            },
-                            {
-                                label: 'Maggie Lynn',
-                                field: 'Relationship banker'
+                                label: 'Philip Lim',
+                                field: 'Financial Advisor'
                             }
                         ]
                     }
