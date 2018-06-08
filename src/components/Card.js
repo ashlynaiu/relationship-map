@@ -6,7 +6,7 @@ class Card extends Component {
   render() {
     const { card } = this.props;
     return (
-      <article className="slds-card">
+      <article className="slds-card slds-card_boundary">
         <div className="slds-card__header slds-grid">
           <header className="slds-media slds-media_center slds-has-flexi-truncate">
             <div className="slds-media__figure">

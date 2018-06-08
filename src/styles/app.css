@@ -1,6 +1,5 @@
 #root {
-  height: 100%;
-  padding: 50px; }
+  height: 100%; }
 
 * {
   margin: 0;
@@ -39,6 +38,9 @@ p {
   font-size: 16px;
   line-height: 24px;
   font-weight: 300; }
+
+.card-container {
+  margin: 130px 20px 20px 20px; }
 
 .container {
   display: flex;
@@ -256,3 +258,6 @@ p {
 
 .slds-icon-standard-contact {
   background-color: #00D2BE !important; }
+
+.fill-white svg {
+  fill: #fff; }
