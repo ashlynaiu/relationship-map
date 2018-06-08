@@ -2,9 +2,8 @@ import React from 'react';
 import Icon from './Icon';
 
 const Navigation = () =>  {
-    let heightStyle = { height: '16rem' };
 	return (
-        <div style={heightStyle}>
+        <div>
         <div className="slds-context-bar">
             <div className="slds-context-bar__primary">
             <div className="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
