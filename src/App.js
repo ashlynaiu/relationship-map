@@ -25,6 +25,7 @@ class App extends Component {
 
   render() {
     let cards = {...this.state.cards};
+
     return (
       <div>
         <Header />
