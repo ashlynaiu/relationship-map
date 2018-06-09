@@ -5,33 +5,17 @@ import TreeBranch from './treeBranch';
 import Icon from './Icon';
 
 class treeContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.collapseCard = this.collapseCard.bind(this);
-    this.state = {
-      hideBranches: false
-    };
-  }
-
-  collapseCard() {
-    let hideBranches = this.state.hideBranches;
-    return this.setState({ hideBranches: !hideBranches });
-  }
 
   render () {
     const { people, changeCard, active, multiBranch} = this.props;
-    let expandedIcon = 'chevrondown';
-    let collapsedIcon = 'chevronright';
     let lastChild = people.length;
     let objectType = people[0].object
-    let renderIcon = () => {
-      return this.state.hideBranches ? collapsedIcon : expandedIcon;
-    }
+
 
     let renderTitle = () => {
       return (
-        <div className={`container-header ${this.state.hideBranches && !multiBranch ? 'collapse-header' : ''}`} onClick={() => this.collapseCard()}>
-          <Icon object={`${renderIcon()}`} type="utility" size="xx-small"/>
+        <div className="container-header">
+          <Icon object="chevrondown" type="utility" size="xx-small"/>
           <h4>{objectType} ({people.length})</h4>
         </div>
       );
@@ -40,7 +24,7 @@ class treeContainer extends Component {
     return (
       <div className={`child-container`}>
           {!people[0].start && renderTitle()}
-          <div className={`${this.state.hideBranches ? 'hide' : ''}`}>
+          <div>
             {Object
               .keys(people)
               .map(key => <TreeBranch
