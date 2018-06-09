@@ -8,15 +8,31 @@ class App extends Component {
   constructor() {
     super();
     this.changeCard = this.changeCard.bind(this);
+    this.setDefaultCards = this.setDefaultCards.bind(this);
+    this.calculateHeight = this.calculateHeight.bind(this);
     this.state = {
       people: data,
       cards: [],
+      treeHeight: '',
       active: null
     };
   }
 
   componentDidMount() {
-    return this.setState({ cards: this.state.people[0].cardData })
+    this.setDefaultCards();
+    this.calculateHeight();
+    return;
+  }
+
+  setDefaultCards() {
+    return this.setState({ cards: this.state.people[0].cardData });
+  }
+
+  calculateHeight() {
+    setTimeout(() => {
+      let height = document.getElementsByClassName('tree')[0].clientHeight;
+      return this.setState({ height: height });
+    }, 300);
   }
 
   changeCard(newCards, active) {
@@ -25,12 +41,20 @@ class App extends Component {
 
   render() {
     let cards = {...this.state.cards};
+    let styles = {
+      cardWidth: {
+        minWidth: "1080px"
+      },
+      cardHeight: {
+        height: this.state.height
+      }
+    };
 
     return (
       <div>
         <Header />
         <div className="card-container">
-          <article className="slds-card">
+          <article className="slds-card" style={styles.cardWidth}>
             <div className="slds-card__header slds-grid">
               <header className="slds-media slds-media_center slds-has-flexi-truncate">
                 <div className="slds-media__body">
@@ -43,7 +67,7 @@ class App extends Component {
               </header>
             </div>
             <div className="slds-card__body slds-card__body_inner">
-              <div className="container">
+              <div className="map-container" style={styles.cardHeight}>
                 <Tree people={this.state.people} changeCard={this.changeCard} active={this.state.active} ></Tree>
                 <div className="right-panel">
                   {Object
