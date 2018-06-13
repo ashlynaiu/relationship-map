@@ -303,10 +303,15 @@ p
     padding: 0
 
     svg
+        position: absolute
         width: .7rem
         height: .7rem
-        left: -5px
-        top: -5px
+        left: -6px
+        top: -13px
+        fill: $brand-blue
+
+    span
+        position: relative
 
 .slds-button.circle-button-edit
     @extend %round-button
@@ -363,6 +368,30 @@ p
     display: flex
     margin-bottom: 8px
 
+///////////////////
+/////Pop Over/////
+/////////////////
+.map-popOver
+    left: 115%
+    top: 10%
+
+    .slds-popover
+        width: 14rem
+
+    .slds-popover__body
+        padding: 32px 16px 26px 16px
+
+.map-popOver-row
+    display: flex
+    justify-content: space-between
+
+    &:not(:first-child)
+        margin-top: 20px
+
+    .number
+        font-weight: bold
+.map-popOver-media
+    display: flex
 /////////////////
 /////States/////
 ///////////////

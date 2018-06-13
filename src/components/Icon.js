@@ -1,5 +1,8 @@
+//Requires Props "object", "type", "size"
+
 import React, { Component } from 'react';
 import StandardIcons from '@salesforce-ux/design-system/assets/icons/standard-sprite/svg/symbols.svg';
+import ActionIcons from '@salesforce-ux/design-system/assets/icons/action-sprite/svg/symbols.svg';
 import UtilityIcons from '@salesforce-ux/design-system/assets/icons/utility-sprite/svg/symbols.svg';
 
 class Icon extends Component {
@@ -12,6 +15,16 @@ class Icon extends Component {
             <span className={`slds-icon_container slds-m-right_x-small slds-icon-standard-${object}`} title="">
                 <svg className={`slds-icon slds-icon_${size}`} aria-hidden="true">
                     <use xlinkHref={`${StandardIcons}#${object}`}></use>
+                </svg>
+            </span>
+        );
+    }
+
+    let renderAction = () => {
+        return (
+            <span className={`slds-icon_container`} title="">
+                <svg className={`slds-icon slds-icon_${size}`} aria-hidden="true">
+                    <use xlinkHref={`${ActionIcons}#${object}`}></use>
                 </svg>
             </span>
         );
@@ -34,6 +47,9 @@ class Icon extends Component {
         }
         else if (type === 'utility') {
             return renderUtility();
+        }
+        else if (type === 'action') {
+            return renderAction();
         }
     }
 
