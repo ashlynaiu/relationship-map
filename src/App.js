@@ -9,18 +9,17 @@ class App extends Component {
     super();
     this.changeCard = this.changeCard.bind(this);
     this.setDefaultCards = this.setDefaultCards.bind(this);
-    this.calculateHeight = this.calculateHeight.bind(this);
+    // this.calculateHeight = this.calculateHeight.bind(this);
     this.state = {
       people: data,
       cards: [],
-      treeHeight: '',
       active: null
     };
   }
 
   componentDidMount() {
     this.setDefaultCards();
-    this.calculateHeight();
+    // this.calculateHeight();
     return;
   }
 
@@ -28,12 +27,12 @@ class App extends Component {
     return this.setState({ cards: this.state.people[0].cardData });
   }
 
-  calculateHeight() {
-    setTimeout(() => {
-      let height = document.getElementsByClassName('tree')[0].clientHeight;
-      return this.setState({ height: height });
-    }, 300);
-  }
+  // calculateHeight() {
+  //   setTimeout(() => {
+  //     let height = document.getElementsByClassName('tree')[0].clientHeight;
+  //     return this.setState({ height: height });
+  //   }, 300);
+  // }
 
   changeCard(newCards, active) {
     return this.setState({ cards: newCards, active: active})
@@ -43,31 +42,21 @@ class App extends Component {
     let cards = {...this.state.cards};
     let styles = {
       cardWidth: {
-        minWidth: "1080px"
+        minWidth: "1080px",
+        height: "100%"
       },
       cardHeight: {
-        height: this.state.height
+        height: "100%"
       }
     };
 
     return (
-      <div>
+      <div style={styles.cardHeight}>
         <Header />
         <div className="card-container">
-          <article className="slds-card" style={styles.cardWidth}>
-            <div className="slds-card__header slds-grid">
-              <header className="slds-media slds-media_center slds-has-flexi-truncate">
-                <div className="slds-media__body">
-                  <h2 className="slds-card__header-title">
-                    <a href="" className="slds-card__header-link slds-truncate" title="Accounts">
-                      <span className="slds-text-heading_small">Relationship Map</span>
-                    </a>
-                  </h2>
-                </div>
-              </header>
-            </div>
-            <div className="slds-card__body slds-card__body_inner">
-              <div className="map-container" style={styles.cardHeight}>
+          <article className="slds-card slds-p-top_medium" style={styles.cardWidth}>
+            <div className="slds-card__body slds-card__body_inner" style={styles.cardHeight}>
+              <div className="map-container">
                 <Tree people={this.state.people} changeCard={this.changeCard} active={this.state.active} ></Tree>
                 <div className="right-panel">
                   {Object
