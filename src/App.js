@@ -9,7 +9,6 @@ class App extends Component {
     super();
     this.changeCard = this.changeCard.bind(this);
     this.setDefaultCards = this.setDefaultCards.bind(this);
-    // this.calculateHeight = this.calculateHeight.bind(this);
     this.state = {
       people: data,
       cards: [],
@@ -19,20 +18,12 @@ class App extends Component {
 
   componentDidMount() {
     this.setDefaultCards();
-    // this.calculateHeight();
     return;
   }
 
   setDefaultCards() {
     return this.setState({ cards: this.state.people[0].cardData });
   }
-
-  // calculateHeight() {
-  //   setTimeout(() => {
-  //     let height = document.getElementsByClassName('tree')[0].clientHeight;
-  //     return this.setState({ height: height });
-  //   }, 300);
-  // }
 
   changeCard(newCards, active) {
     return this.setState({ cards: newCards, active: active})
