@@ -1,5 +1,4 @@
-//Component contains logic for the container of a grouped,
-//object specific branches
+//Component contains logic for the container of a grouped, specific objects in a branches
 import React, { Component } from 'react';
 import TreeBranch from './treeBranch';
 import Icon from './Icon';
@@ -9,8 +8,7 @@ class treeContainer extends Component {
   render () {
     const { people, changeCard, active, multiBranch} = this.props;
     let lastChild = people.length;
-    let objectType = people[0].object
-
+    let objectType = people[0].object;
 
     let renderTitle = () => {
       return (

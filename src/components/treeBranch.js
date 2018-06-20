@@ -1,3 +1,4 @@
+//Every Node has a branch that allow children to render if they exist
 import React, { Component } from 'react';
 import TreeLevel from './treeLevel';
 import TreeNode from './treeNode';

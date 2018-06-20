@@ -126,9 +126,16 @@ p
 /////////////////
 /////Layout/////
 ///////////////
-.card-container
+.fullHeight
+    height: 100%
+
+.app-container
     margin: 130px 20px 20px 20px
     height: calc(100% + 90px)
+
+.app-container-card
+    min-width: 1080px
+    height: 100%
 
 .map-container
     display: flex
@@ -203,9 +210,9 @@ p
         h4
             font-size: 16px
             margin-left: 8px
-        &.collapse-header
-            &:after
-                content: none
+
+        &.collapse-header:after
+            content: none
 
 //Allow header to extend to lower node
 .child-level .child-container .container-header:after
@@ -222,7 +229,6 @@ p
 .branch
     position: relative
     padding-bottom: 12px
-    transition: height 3s ease-out
 
     &:before
         position: absolute
@@ -239,8 +245,6 @@ p
         border-left: 2px solid $line-color
         left: -3.2rem
         top: 2rem
-    // .node
-    //     margin-top: 12px
 
 .last-node:after
     content: none
@@ -251,18 +255,11 @@ p
     &:after
         height: 160%
 
-.lastChild, .first-branch
-    &:after
-        content: none
-
 .first-branch
     &:before
         content: none
-
-//Node Focus Classes
-.node.active .node-button
-    border: rgba(0,112,210,1) 1px solid
-    box-shadow: 0px 0px 5px 0px rgba(0,112,210,1)
+    &:after
+        content: none
 
 ///////////////
 /////Node/////
@@ -291,8 +288,11 @@ p
         font-size: 12px
         color: $line-color
         display: block
-.slds-button_neutral
-    text-align: left
+
+//Node Focus
+.node.active .node-button
+    border: rgba(0,112,210,1) 1px solid
+    box-shadow: 0px 0px 5px 0px rgba(0,112,210,1)
 
 ///////////////////////
 /////Edit Buttons/////
@@ -417,3 +417,6 @@ p
 .fill-white
     svg
         fill: #fff
+
+.slds-button_neutral
+    text-align: left

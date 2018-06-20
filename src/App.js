@@ -31,22 +31,13 @@ class App extends Component {
 
   render() {
     let cards = {...this.state.cards};
-    let styles = {
-      cardWidth: {
-        minWidth: "1080px",
-        height: "100%"
-      },
-      cardHeight: {
-        height: "100%"
-      }
-    };
 
     return (
-      <div style={styles.cardHeight}>
+      <div className="fullHeight">
         <Header />
-        <div className="card-container">
-          <article className="slds-card slds-p-top_medium" style={styles.cardWidth}>
-            <div className="slds-card__body slds-card__body_inner" style={styles.cardHeight}>
+        <div className="app-container">
+          <article className="slds-card slds-p-top_medium app-container-card">
+            <div className="slds-card__body slds-card__body_inner fullHeight">
               <div className="map-container">
                 <Tree people={this.state.people} changeCard={this.changeCard} active={this.state.active} ></Tree>
                 <div className="right-panel">

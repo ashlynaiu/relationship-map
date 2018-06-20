@@ -1,4 +1,3 @@
-
 //Component contains the logic on how many object
 //branches to make.
 import React, { Component } from 'react';
