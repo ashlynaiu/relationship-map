@@ -7,6 +7,7 @@ import TweenMax, { Back, Power3 } from 'gsap';
 class treeBranch extends Component {
   constructor(props) {
     super(props);
+    this.getChildsHeight = this.getChildsHeight.bind(this);
     this.state = {
       height: 'inherit',
       nodeHeight: '',
@@ -17,7 +18,6 @@ class treeBranch extends Component {
 
   componentDidMount() {
     this.setState({ nodeHeight: this.refs.node.getBoundingClientRect().height });
-    
   }
 
   updateHeight() {
@@ -40,7 +40,7 @@ class treeBranch extends Component {
     let person = this.props.person;
     const nodeProps = {
       hidden: this.state.isHide,
-      lastChild: this.props.index == (this.props.lastChild - 1),
+      lastChild: parseInt(this.props.index, 10) === parseInt(this.props.lastChild - 1, 10),
       hasChildren: person.children && !person.start,
       isRoot: person.start
     };
@@ -68,11 +68,10 @@ class treeBranch extends Component {
     let isHide = this.state.isHide;
     this.setState({ isHide: !isHide });
     window.requestAnimationFrame(this.updateHeight.bind(this));
-    
   }
 
   render() {
-    const { person, lastChild, changeCard, active, index, multiBranch} = this.props;
+    const { person, changeCard, active } = this.props;
     let renderBranchClasses = () => {
       let classesToReturn = this.state.isHide ? 'branch-hidden' : '';
       classesToReturn =+ person.start ? ' first-branch' : '';
@@ -83,7 +82,7 @@ class treeBranch extends Component {
         <div ref='node' className={`${person.start ? 'first-node' : 'node'} ${active === person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
           <TreeNode person={person} hideChildren={this.hideChildren.bind(this)}/>
         </div>
-        {person.children && <TreeLevel childLevel={this.childLevel} treeLevel={node => this.childLevel = node} getChildsHeight={this.getChildsHeight.bind(this)} index={person.id} changeCard={changeCard} active={active} people={person.children} isHide={this.state.isHide}/>}
+        {person.children && <TreeLevel childLevel={this.childLevel} treeLevel={node => this.childLevel = node} getChildsHeight={this.getChildsHeight} index={person.id} changeCard={changeCard} active={active} people={person.children} isHide={this.state.isHide}/>}
       </div>
     )
   }
