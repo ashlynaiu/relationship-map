@@ -3,6 +3,8 @@ import CrudButtons from './crudButtons';
 import PopOver from './popOver';
 import Icon from './Icon';
 
+
+
 class treeNode extends Component {
   constructor(props) {
     super();
@@ -12,6 +14,7 @@ class treeNode extends Component {
       showButtons: false,
       showPopOver: false
     }
+    
   }
 
   hoverHandler() {
@@ -20,8 +23,8 @@ class treeNode extends Component {
   }
 
   popOverHandler() {
-    let showPopOver = this.state.showPopOver;
-    return this.setState({ showPopOver: !showPopOver });
+    // let showPopOver = this.state.showPopOver;
+    // return this.setState({ showPopOver: !showPopOver });
   }
 
   render() {
