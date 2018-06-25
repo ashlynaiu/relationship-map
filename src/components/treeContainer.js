@@ -6,7 +6,7 @@ import Icon from './Icon';
 class treeContainer extends Component {
 
   render () {
-    const { people, changeCard, active, multiBranch} = this.props;
+    const { people, changeCard, active } = this.props;
     let lastChild = people.length;
     let objectType = people[0].object;
 
@@ -31,7 +31,6 @@ class treeContainer extends Component {
                 changeCard={changeCard}
                 active={active}
                 lastChild={lastChild}
-                multiBranch={multiBranch}
                 person={people[key]}/>)
             }
           </div>

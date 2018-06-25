@@ -12,6 +12,11 @@ class treeLevel extends Component {
     };
   }
 
+  getHeight(){
+    let height = this.props.childLevel.getBoundingClientRect().height;
+    this.props.getChildsHeight(height);
+  }
+
   componentDidMount() {
     let children = this.props.people;
     let accounts = [];
@@ -25,7 +30,9 @@ class treeLevel extends Component {
         contacts.push(children[i]);
       }
     }
-
+    if(this.props.getChildsHeight){
+      window.requestAnimationFrame(this.getHeight.bind(this));
+    }
     return this.setState({
       accountChildren: accounts,
       contactChildren: contacts
@@ -36,13 +43,12 @@ class treeLevel extends Component {
     const { people, changeCard, active, index, isHide } = this.props;
     let accounts = this.state.accountChildren;
     let contacts = this.state.contactChildren;
-    let multiBranch = accounts.length > 0 && contacts.length > 0 ? true : false;
 
     //To Do: Validate the index is not duplicating
     return (
-      <div id={index} className={`${people[0].start ? 'parent-level' : 'child-level'} ${isHide ? 'hide' : ''}`}>
-        {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} active={active} objectType='accounts' multiBranch={multiBranch}/>}
-        {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} active={active} objectType='contacts' multiBranch={multiBranch}/>}
+      <div id={index} ref={this.props.treeLevel} className={`${people[0].start ? 'parent-level' : 'child-level'} ${isHide ? 'hide' : ''}`}>
+        {accounts.length > 0 && <TreeContainer people={accounts} changeCard={changeCard} active={active} objectType='accounts' />}
+        {contacts.length > 0 && <TreeContainer people={contacts} changeCard={changeCard} active={active} objectType='contacts' />}
       </div>
     )
   }

@@ -1,78 +1,93 @@
 //Every Node has a branch that allow children to render if they exist
+//Credit to Jordan Wright for the animation additions to component
+
 import React, { Component } from 'react';
 import TreeLevel from './treeLevel';
 import TreeNode from './treeNode';
+import TweenMax, { Back, Power3 } from 'gsap';
 
 class treeBranch extends Component {
   constructor(props) {
-    super();
-    this.hideChildren = this.hideChildren.bind(this);
-    this.calculateHeight = this.calculateHeight.bind(this);
+    super(props);
+    this.getChildsHeight = this.getChildsHeight.bind(this);
     this.state = {
       height: 'inherit',
+      nodeHeight: '',
+      childsHeight: '',
       isHide: false
     }
   }
 
   componentDidMount() {
-    this.calculateHeight();
+    this.setState({ nodeHeight: this.refs.node.getBoundingClientRect().height });
   }
 
-  calculateHeight() {
+  updateHeight() {
+    let properAction = this.getProperAction();
+    const config = {
+      setHeightAsNode : this.state.nodeHeight,
+      setHeightAsChild : this.state.childsHeight,
+      hideBranchNodes : {scale:0, opacity:0, ease:Back.easeOut.config(1.7)},
+      showBranchNodes : {scale:1, opacity:1, ease:Back.easeOut.config(1.7)},
+      hideBranch: { opacity: 0, left:'14.7rem' },
+      showBranch: { opacity: 1, left:'15rem' }
+    }
+    TweenMax.to(this.refs.branch, .2, { height: config[properAction.heightProps] + 'px', ease:Power3.easeOut });
+    TweenMax.to(this.childLevel, .2, config[properAction.BranchProps]);
+    TweenMax.to(this.childLevel.querySelectorAll('.node'), .3, config[properAction.BranchNodeProps]);
+  }
+
+  getProperAction(){
+    let properAction = {};
     let person = this.props.person;
-    setTimeout(() => {
-      if(this.state.isHide || this.props.index >= (this.props.lastChild - 1)) {
-        return this.setState({ height: 'inherit'})
-      }
-      else {
-        if (person.children && !person.start) {
-          let idNumber = person.id.toString();
-          let height = document.getElementById(idNumber).offsetHeight;
-          return this.setState({ height: height });
-        }
-        else {
-            return this.setState({ height: 'inherit' });
-        }
-      }
-    }, 100);
+    const nodeProps = {
+      hidden: this.state.isHide,
+      lastChild: parseInt(this.props.index, 10) === parseInt(this.props.lastChild - 1, 10),
+      hasChildren: person.children && !person.start,
+      isRoot: person.start
+    };
+
+    if(nodeProps.hidden || nodeProps.lastChild || nodeProps.isRoot) {
+      properAction.heightProps = 'setHeightAsNode';
+    } else if (!nodeProps.hidden && !nodeProps.lastChild && nodeProps.hasChildren ) {
+      properAction.heightProps = 'setHeightAsChild';
+    }
+    if(nodeProps.hidden){
+      properAction.BranchProps = 'hideBranch';
+      properAction.BranchNodeProps = 'hideBranchNodes';
+    }else{
+      properAction.BranchProps = 'showBranch';
+      properAction.BranchNodeProps = 'showBranchNodes';
+    }
+    return properAction;
+  }
+
+  getChildsHeight(childsHeight) {
+    this.setState({childsHeight});
+    this.updateHeight();
   }
 
   hideChildren() {
     let isHide = this.state.isHide;
     this.setState({ isHide: !isHide });
-    this.calculateHeight();
+    window.requestAnimationFrame(this.updateHeight.bind(this));
   }
 
   render() {
-    const { person, lastChild, changeCard, active, index, multiBranch} = this.props;
-    let heightStyle = {
-        height: this.state.height
-    }
+    const { person, changeCard, active } = this.props;
 
-    //The ultimate class hack. Please fix me.
     let renderBranchClasses = () => {
-      let branchHidden = this.state.isHide ? 'branch-hidden ' : '';
-      let parentNode = person.start ? ' first-branch' : '';
-      let lastLevelNode = () => {
-        if (multiBranch && index >= (lastChild - 1) && person.object === 'Contact') {
-          return 'last-node';
-        }
-        else if (!multiBranch && index >= (lastChild - 1)) {
-          return 'last-node';
-        }
-        else {
-          return '';
-        }
-      }
-      return (branchHidden.concat(lastLevelNode()).concat(parentNode));
+      let classesToReturn = this.state.isHide ? 'branch-hidden' : '';
+      classesToReturn =+ person.start ? ' first-branch' : '';
+      return classesToReturn;
     }
 
     return (
-      <div className={`branch ${renderBranchClasses()}`} style={heightStyle}>
-        <div className={`${person.start ? 'first-node' : 'node'} ${active === person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
-          <TreeNode person={person} hideChildren={this.hideChildren}/>
+      <div ref='branch' className={`branch ${renderBranchClasses()}`} style={{height: this.state.height}}>
+        <div ref='node' className={`${person.start ? 'first-node' : 'node'} ${active === person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
+          <TreeNode person={person} hideChildren={this.hideChildren.bind(this)}/>
         </div>
-        {person.children && <TreeLevel index={person.id} changeCard={changeCard} active={active} people={person.children} isHide={this.state.isHide}/>}
+        {person.children && <TreeLevel childLevel={this.childLevel} treeLevel={node => this.childLevel = node} getChildsHeight={this.getChildsHeight} index={person.id} changeCard={changeCard} active={active} people={person.children} isHide={this.state.isHide}/>}
       </div>
     )
   }

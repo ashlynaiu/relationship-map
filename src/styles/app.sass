@@ -228,7 +228,6 @@ p
 ///////////////
 .branch
     position: relative
-    padding-bottom: 12px
 
     &:before
         position: absolute
@@ -264,6 +263,12 @@ p
 ///////////////
 /////Node/////
 /////////////
+.node
+    padding-bottom: 12px
+
+.first-node
+    padding-bottom: 12px
+
 .node-button
     display: flex
     width: 10rem
@@ -401,9 +406,7 @@ p
 /////States/////
 ///////////////
 .hide
-    transition: all .2s ease
     opacity: 0
-    display: none
 
 .crud-hide
     display: none
@@ -420,3 +423,15 @@ p
 
 .slds-button_neutral
     text-align: left
+
+
+////////////////////////////
+//////handle last nodes////
+//////////////////////////
+
+.child-level .child-level .child-container:last-child .branch:last-child:after
+    height: 0
+
+
+.first-branch > .child-level > .child-container:last-child > div > .branch:last-child:after
+    height: 0

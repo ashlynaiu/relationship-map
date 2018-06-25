@@ -10,6 +10,7 @@
   "dependencies": {
     "@salesforce-ux/design-system": "^2.6.1",
     "ajv": "^6.5.0",
+    "gsap": "^2.0.1",
     "history": "^4.7.2",
     "lightning-container": "^1.0.0",
     "react": "^16.4.0",
