@@ -1,4 +1,6 @@
 //Every Node has a branch that allow children to render if they exist
+//Credit to Jordan Wright for the animation additions to component
+
 import React, { Component } from 'react';
 import TreeLevel from './treeLevel';
 import TreeNode from './treeNode';
@@ -44,6 +46,7 @@ class treeBranch extends Component {
       hasChildren: person.children && !person.start,
       isRoot: person.start
     };
+
     if(nodeProps.hidden || nodeProps.lastChild || nodeProps.isRoot) {
       properAction.heightProps = 'setHeightAsNode';
     } else if (!nodeProps.hidden && !nodeProps.lastChild && nodeProps.hasChildren ) {
@@ -72,11 +75,13 @@ class treeBranch extends Component {
 
   render() {
     const { person, changeCard, active } = this.props;
+
     let renderBranchClasses = () => {
       let classesToReturn = this.state.isHide ? 'branch-hidden' : '';
       classesToReturn =+ person.start ? ' first-branch' : '';
       return classesToReturn;
     }
+
     return (
       <div ref='branch' className={`branch ${renderBranchClasses()}`} style={{height: this.state.height}}>
         <div ref='node' className={`${person.start ? 'first-node' : 'node'} ${active === person.id ? 'active' : ''}`} onClick={() => changeCard(person.cardData, person.id)}>
